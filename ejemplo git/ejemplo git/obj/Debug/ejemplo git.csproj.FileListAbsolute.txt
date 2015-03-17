@@ -1,0 +1,9 @@
+C:\Users\Venancio.Prada\grafocos\ejemplo git\ejemplo git\bin\Debug\ejemplo git.exe.config
+C:\Users\Venancio.Prada\grafocos\ejemplo git\ejemplo git\bin\Debug\ejemplo git.exe
+C:\Users\Venancio.Prada\grafocos\ejemplo git\ejemplo git\bin\Debug\ejemplo git.pdb
+C:\Users\Venancio.Prada\grafocos\ejemplo git\ejemplo git\obj\Debug\ejemplo git.csprojResolveAssemblyReference.cache
+C:\Users\Venancio.Prada\grafocos\ejemplo git\ejemplo git\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Venancio.Prada\grafocos\ejemplo git\ejemplo git\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Venancio.Prada\grafocos\ejemplo git\ejemplo git\obj\Debug\ejemplo git.csproj.GenerateResource.Cache
+C:\Users\Venancio.Prada\grafocos\ejemplo git\ejemplo git\obj\Debug\ejemplo git.exe
+C:\Users\Venancio.Prada\grafocos\ejemplo git\ejemplo git\obj\Debug\ejemplo git.pdb
