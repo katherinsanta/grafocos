@@ -1,0 +1,1111 @@
+﻿/* DISEÑO PROYECTO RECONVERSIÓN TARIJA BOLIVIA
+-COLORES UTILIZADOS
+* BASICOS
+--COLOR 1
+--COLOR 2
+* SECUNDARIOS
+--COLOR 1
+--COLOR 2
+* LETRAS
+--COLOR 1
+--COLOR 2
+ */
+/*CUERPO*/
+body, html
+{
+	margin-bottom: 0px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+
+/*CONTENEDOR PRINCIPAL */
+table.ContenedorPrincipal
+{
+	width: 100%;
+	height: 100%;
+	background-image: url('../BlueSkin/Update/FondoContenedor.png');
+	background-repeat: repeat-x;	
+}
+/*pie principal*/
+Pie
+{
+	background-repeat:repeat;
+	background-image:url('../BlueSkin/Update/BanerDerecho.png');
+	width:820px;
+	height:59px;
+}
+/*CABEZA*/
+table.CabezaLogo
+{
+	width: 100%;
+	height: 80px;
+	background-repeat:repeat;
+	background-image:url('BlueSkin/Update/bg-banner.png');
+	
+}
+/* Links Genéricos */
+
+a.Link1
+{
+	font-size:10px;
+	font-family:sans-serif,tahoma,geneva;
+	color: #ffffff;
+	cursor: pointer;
+	text-decoration: none;
+}
+a.Link1:hover
+{
+	color: #DEC610;
+}
+.Descripcion
+{
+	font-size:9px;
+	font-family:tahoma,geneva;
+	color:#B5B5B5;
+	
+}
+
+
+
+
+table.ContenedorPrincipal td.Contenido
+{
+	height: 100%;
+}
+/*CONTENEDOR SECUNDARIO */
+table.ContenedorSecundario
+{
+	width: 98%;
+	height: 500px;
+	background-color: #ffffff;
+}
+table.ContenedorSecundario td.Cabeza
+{
+	height: 15%;
+	background-color: #e2eaf2;
+}
+table.ContenedorSecundario td.Contenido
+{
+	height: 80%;
+	background-color: #fef6dc;
+}
+
+table.ContenedorPie
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-align: center;
+	width: 100%;
+}
+table.BarraNevegador
+{
+	background-image: url(Degradados/dg_Naranja.jpg);
+	background-repeat: repeat-x;
+	width: 100%;
+	height: 35px;
+}
+table.BarraNavegador td
+{
+	text-align: center;
+}
+/* Links Genéricos */
+a
+{
+	font-family: Verdana;
+	font-size: 10px;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight:bold;
+}
+a:hover
+{
+	color: #F0E87D;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+
+a.Link2
+{
+	color: #283c86;
+	cursor: pointer;
+	text-decoration: none;
+}
+a.Link2:hover
+{
+	color: #ffffff;
+}
+Link2
+{
+	font-family: Verdana;
+	color: #283c86;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+}
+Link2:hover
+{
+	color: #ffffff;
+}
+Link3
+{
+	font-family: Verdana;
+	color: #ffffff;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+}
+Link3:hover
+{
+	color: #283c86;
+}
+
+
+table.CabezaLogo td.Links
+{
+	text-align: right;
+}
+table.CabezaLogo td.baner
+{
+	background-repeat:repeat;
+	background-image:url('../BlueSkin/Update/bg-banner.png');
+	
+}
+.pestanaSelect
+{
+	background-repeat:repeat;
+	background-image: url('../BlueSkin/Update/Pestana_inicio.png');
+	width: 172px;
+	font-family: Verdana, geneva,Sans-Serif;
+	font-size: 12px;
+	color: #ffffff;	
+}
+.separadorPestana
+{
+	height:27px;
+	width:4px;
+	background-image:url('/BlueSkin/Update/separadorPestana.png');
+}
+.Usuario
+{
+	background-repeat:repeat;
+	background-image: url(BlueSkin/Update/interfazUsu.png);
+	font-size: 12px;
+	height: 16px;
+	font-family:Tahoma,Geneva,sans-serif;
+	color: #ffffff;
+}
+.pestanas
+{
+	background-repeat:repeat;
+	background-image: url('../BlueSkin/Update/Pestana_Links.gif');
+	background-position:center;
+	font-size: 12px;
+	height: 27px;
+	font-family:Tahoma,Geneva,sans-serif;
+	color: #ffffff;
+}
+.div
+{
+	border:solid 1px #120105;
+	
+}
+.divH
+{
+	background-color:#cccccc;
+	border-left: solid 1px #000000;
+	border-right: solid 1px #000000;
+    border-top: solid 1px #000000; 
+    margin-right: 4px;    
+}
+.divC
+{
+	border-left: solid 1px #000000;
+	border-right: solid 1px #000000;
+	border-bottom: solid 1px #000000;
+}
+.separadorPestana
+{
+	width:2px;
+	height:24px;
+}
+
+.pestana:hover
+{
+	background-image: url(Imagenes/Tableta_Superior_Azul1_Over.png);
+	width: 120px;
+	height: 32px;
+}
+.pestana_activa
+{
+	background-image: url(Imagenes/Pestana_Verde_Superior_Activa.png);
+	width: 120px;
+	height: 32px;
+	cursor: pointer;
+	font-size: 11px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #ffffff;
+	font-weight: bold;
+}
+.pestana_oculta
+{
+	visibility: hidden;
+}
+
+/*CONTENEDOR LINKS*/
+
+table.ContenedorLinks
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	width: 100%;
+	font-weight: bold;
+	text-transform: capitalize;
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+/*CONTENIDO */
+table.Contenido
+{
+	background-color: #fcfaec;
+	height: 100%;
+	width: 100%;
+}
+table.Contenido td.Menu
+{
+	background-color: #CCCCCC;
+	text-align: center;
+	width: 185px;
+	border-right: #ced9e8 1px solid;
+}
+table.Contenido td.ContenidoPagina
+{
+	background-color: #f0f3f6;
+}
+table.ContenidoPaginaPanel
+{
+	height: 60px;
+	width: 100%;
+}
+table.ContenidoPaginaPanel tr.PanelInformacion
+{
+	height: 60px;
+	background-image: url(Imagenes/FondoPanelInformativo.png);
+	background-repeat: repeat-x;
+}
+table.ContenidoPaginaPanel tr.Separador
+{
+	height: 10px;
+}
+table.ContenidoPaginaPanel tr.Pagina
+{
+}
+/* PAGINA MAESTRA */
+table.PanelTituloPagina
+{
+	height: 100%;
+	width: 100%;
+}
+table.PanelTituloPagina td.Icono
+{
+	width: 10%;
+}
+table.PanelTituloPagina td.Titulo
+{
+	width: 50%;
+	font-family: Verdana;
+	font-size: 14px;
+	font-weight: bold;
+	color: #797B85;
+}
+table.PanelTituloPagina td.Detalle
+{
+	font-size: 12px;
+	font-family: Verdana;
+	width: 30%;
+	text-align: left;
+	color: #848587;
+}
+table.PanelTituloPagina td.Volver
+{
+	width: 10%;
+}
+/* PAGINA MAESTRA */
+table.PanelInfo
+{
+}
+table.Arbol
+{
+	background-image: url(Imagenes/dg_100_amarillo.jpg);
+	background-repeat: repeat-x;
+	width: 100%;
+}
+table.Arbol td.NodoPapa
+{
+	background-image: url(Degradados/dg_panel_verde_normal.png);
+	color: #ffffff;
+	height: 25px;
+	width: 180px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	cursor: pointer;
+}
+table.Arbol td.NodoPapa:hover
+{
+	background-image: url(Degradados/dg_panel_verde_over.png);
+	background-repeat: repeat-x;
+}
+table.Arbol td.NodoHijo
+{
+	padding: 2px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #666666;
+	font-size: 10px;
+	height: 20px;
+	width: 100%;
+	text-align: left;
+}
+table.Arbol td.NodoHijo:hover
+{
+}
+/*BOTÓN*/
+.Boton
+{
+	background-color: #69a4cc;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	height: 25px;
+	width: 120px;
+	border: 0.5pt solid #0164a5;
+}
+.Boton1
+{
+	background-image: url(Imagenes/dg_25_azul.jpg);
+	background-repeat: repeat-x;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #226694;
+	height: 25px;
+	width: 120px;
+	border: 0.5pt solid #0164a5;
+}
+/*CSS WEB CONTROLS*/
+/* GRILLA DATOS */
+.Grilla
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #ffe800;
+	border-style: solid;
+	border-color: #6087b9;
+	border-width: 0.8pt;
+	width: 100%;
+}
+.Grilla tr.Cabeza
+{
+	color: #ffe800;
+	font-weight: bold;
+	background-color: #000000;
+	cursor: pointer;
+	text-align: center;
+}
+.Grilla tr.Pie
+{
+	color: #16355b;
+	font-weight: bold;
+	font-size: 10px;
+	background-color: #e0e6ed;
+	cursor: pointer;
+	text-align: right;
+}
+.Grilla td.Cabezatd
+{
+	background-image: url(Degradados/dg_cabeza_grilla_normal.png);
+	background-repeat: repeat-x;
+}
+.Grilla td.Cabezatd:hover
+{
+	color: #FFFFFF;
+	font-weight: bold;
+	background-image: url(Degradados/dg_cabeza_grilla_over.png);
+	background-repeat: repeat-x;
+}
+.Grilla tr.FilaNormal
+{
+	background-color: #faf9e9;
+	font-size: 9px;
+	color: #000000;
+	cursor: pointer;
+}
+.Grilla tr.FilaNormal:hover
+{
+	background-color: #f9cd8d;
+	cursor: pointer;
+}
+.Grilla tr.FilaAlternada
+{
+	background-color: #faf9e9;
+	font-size: 9px;
+	color: #000000;
+	cursor: pointer;
+}
+.Grilla tr.FilaAlternada:hover
+{
+	background-color: #f9cd8d;
+	cursor: pointer;
+}
+.Grilla tr.FilaSeleccionada
+{
+	background-color: #f9cd8d;
+	font-weight: bold;
+	cursor: pointer;
+}
+.Grilla td.Celda
+{
+	border: 0.1pt solid #CCCCFF;
+}
+.td_c
+{
+	text-align: center;
+}
+.td_d
+{
+	text-align: right;
+}
+.td_i
+{
+	text-align: left;
+}
+.ItemGrillaResaltadoIzq
+{
+	border-left-color: #7c97c5;
+	border-bottom-color: #7c97c5;
+	margin: 0.2pt;
+	border-top-style: solid;
+	border-top-color: #7c97c5;
+	font-family: Verdana;
+	border-right-style: solid;
+	border-left-style: solid;
+	background-color: #e9eaec;
+	border-right-color: #7c97c5;
+	border-bottom-style: solid;
+	text-align: center;
+	font-weight: bold;
+	border-bottom-width: 0.7pt;
+	border-top-width: 0.7pt;
+	border-right-width: 0.7pt;
+	border-left-width: 0.7pt;
+	text-align: left;
+}
+.ItemGrillaResaltadoDer
+{
+	border-left-color: #7c97c5;
+	border-bottom-color: #7c97c5;
+	margin: 0.2pt;
+	border-top-style: solid;
+	border-top-color: #7c97c5;
+	font-family: Verdana;
+	border-right-style: solid;
+	border-left-style: solid;
+	background-color: #e9eaec;
+	border-right-color: #7c97c5;
+	border-bottom-style: solid;
+	text-align: center;
+	font-weight: bold;
+	border-bottom-width: 0.7pt;
+	border-top-width: 0.7pt;
+	border-right-width: 0.7pt;
+	border-left-width: 0.7pt;
+	text-align: right;
+}
+.ItemGrillaResaltadoIzq:hover
+{
+	background-color: #f9cd8d;
+	font-weight: bold;
+	cursor: pointer;
+}
+.ItemGrillaResaltadoIzq:hover
+{
+	background-color: #f9cd8d;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/* GRILLA DATOS */
+/* GRILLA MENU */
+.GrillaMenu
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #eff4fc;
+	width: 100%;
+	text-align: left;
+}
+.GrillaMenu tr.FilaNormal
+{
+	background-color: #f4f5f7;
+	font-size: 10px;
+	color: #000000;
+	cursor: pointer;
+	height: 25px;
+	text-decoration: none;
+}
+.GrillaMenu tr.FilaNormal:hover
+{
+	background-color: #dce6f6;
+	color: #ffffff;
+	font-weight: bold;
+	cursor: pointer;
+}
+.GrillaMenu td.CeldaIcono
+{
+	width: 70%;
+	text-align: center;
+}
+.GrillaMenu td.CeldaOpcion
+{
+	width: 30%;
+	text-align: left;
+}
+/* GRILLA MENU */
+/* HYPERLINK MENU DCHO */
+.link_menu
+{
+	color: #09438d;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 10px;
+	text-decoration: none;
+}
+/* HYPERLINK MENU DCHO */
+/* PANEL COLAPSABLE */
+.collapsePanel
+{
+	padding: 2px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #666666;
+	font-size: 10px;
+	height: 20px;
+	width: 100%;
+	text-align: left;
+}
+/* PANEL COLAPSABLE */
+.PanelMenuCabeza
+{
+	background-color:#666666;
+	color: #ffffff;
+	height: 64px;
+	width: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.PanelMenuCabeza:hover
+{
+	background-image: url(Imagenes/Tableta_Izquierda_Azul_Over.png);
+	color: #ffffff;
+	height: 25px;
+	width: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+}
+.PanelMenuCabeza_Activa
+{
+	background-image: url(Imagenes/Pestana_Verde_Izquierda_Activa.png);
+	color: #ffffff;
+	height: 25px;
+	width: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.PestanaForm
+{
+	background-image: url(Imagenes/Pestana_form.png);
+	background-repeat: no-repeat;
+	color: #ffffff;
+	font-size: 11px;
+	font-weight: bold;
+	font-family: Verdana;
+	width: 125px;
+	height: 25px;
+	text-align: center;
+}
+/* PANEL PUNTAS CURVAS */
+.PanelCurvas
+{
+	height: 27px;
+	width: 100%;
+}
+.PanelCurvas td.oreja_izq
+{
+	background-image: url(Imagenes/EsquinaForm_izq.png);
+	width: 10px;
+}
+.PanelCurvas td.centropanel
+{
+	background-image: url(Imagenes/FondoCentroTitulo.png);
+	background-repeat: repeat-x;
+	color: #1b45af;
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+}
+.PanelCurvas td.oreja_der
+{
+	background-image: url(Imagenes/EsquinaForm_der.png);
+	width: 10px;
+}
+/* PANEL PUNTAS CURVAS */
+/* BOTON ACEPTAR *
+/
+/* BOTON ACEPTAR */
+/* PANEL */
+.Tabla1Panel
+{
+	background-color: #faf9e9;
+	color: #647a5a;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border-style: solid;
+	border-color: #c3baa2;
+	border-width: 2px;
+	width: 95%;
+	text-align: left;
+}
+.Tabla2Panel
+{
+	background-color: #fffde5;
+	color: #647a5a;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border-style: solid;
+	border-color: #c3baa2;
+	border-width: 0.5pt;
+	width: 100%;
+	text-align: left;
+}
+.Tabla1PanelTitulo
+{
+	background-color: #90a8c9;
+	color: white;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: outset;
+	border-left-style: outset;
+	border-top-color: #90a8c9;
+	border-right-color: #90a8c9;
+	border-bottom-color: #90a8c9;
+	border-left-color: #90a8c9;
+}
+.Tabla1PanelResaltado
+{
+	background-color: #d8ded9;
+	color: #757575;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border-style: solid;
+	border-color: #c3baa2;
+	border-width: 1px;
+	width: 100%;
+}
+/* PANEL * /
+/*FORM*/
+.Formulario
+{
+	width: 90%;
+}
+/*FORM*/
+/* POPUP */
+.modalBackground
+{
+	background-color: Gray;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+.modalPopup
+{
+	background-color: #ffffff;
+	border-width: 1px;
+	-moz-border-radius: 5px;
+	border-style: solid;
+	border-color: Gray;
+	min-width: 200px;
+	max-width: 300px;
+	min-height: 150px;
+	max-height: 150px;
+	top: 100px;
+	left: 150px;
+}
+/*Estilo de Tabla Gris*/
+.TablaPopupGrilla
+{
+	background-color: #FFFFFF;
+	background-repeat: repeat-x;
+	width: 75%;
+}
+.TablaPopupGrilla tr.Cabeza
+{
+	background-color: #336699;
+	font-size: 11px;
+	font-weight: bold;
+	font-family: Verdana;
+	color: #ffffff;
+	font-weight: bold;
+	text-align: center;
+}
+.TablaPopupGrilla tr.Celda
+{
+	background-image: url(Imagenes/FondoGris.jpg);
+	background-repeat: repeat-x;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+	font-weight: bold;
+	text-align: center;
+}
+.TablaPopup
+{
+	background-color: #FFFFFF;
+	background-repeat: repeat-x;
+	width: 350px;
+}
+.TablaPopup tr.Cabeza
+{
+	background-color: #336699;
+	font-size: 11px;
+	font-weight: bold;
+	font-family: Verdana;
+	color: #ffffff;
+	font-weight: bold;
+	text-align: center;
+}
+.TablaPopup tr.Celda
+{
+	background-image: url(Imagenes/FondoGris.jpg);
+	background-repeat: repeat-x;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+	font-weight: bold;
+	text-align: center;
+}
+.EtiquetaMensaje
+{
+	font-family: Verdana;
+	font-size: 12px;
+	color: #1a3979;
+	width: 100%;
+}
+/* POPUP*/
+.Calendario .ajax__calendar_container
+{
+	border: 1px solid #003399;
+	background-color: #ffffff;
+	color: #042567;
+}
+.PrompInvisible
+{
+	visibility: hidden;
+}
+/* Paneles de Consulta dentro de un Formulario */
+.autocomplete_completionListElement
+{
+	visibility: hidden;
+	margin: 0px !important;
+	background-color: inherit;
+	color: windowtext;
+	border: buttonshadow;
+	border-width: 1px;
+	border-style: solid;
+	cursor: 'default';
+	overflow: auto;
+	height: 200px;
+	text-align: left;
+	list-style-type: none;
+}
+/* AutoComplete highlighted item */
+.autocomplete_highlightedListItem
+{
+	background-color: #71a8ee;
+	color: black;
+	padding: 1px;
+	cursor: pointer;
+}
+/* AutoComplete item */
+.autocomplete_listItem
+{
+	background-color: window;
+	color: windowtext;
+	padding: 1px;
+}
+.td_grilla
+{
+	background-image: url(Imagenes/FondoCentroTitulo.png);
+	background-repeat: repeat-x;
+	color: #1b45af;
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+}
+.BannerTop
+{
+}
+/*Estilos realizados por anibal gomez*/
+.ItemGrillaResaltadoAlineadoIzquierda
+{
+	border-left-color: #7c97c5;
+	border-bottom-color: #7c97c5;
+	margin: 0.2pt;
+	border-top-style: solid;
+	border-top-color: #7c97c5;
+	font-family: Verdana;
+	border-right-style: solid;
+	border-left-style: solid;
+	background-color: #e9eaec;
+	border-right-color: #7c97c5;
+	border-bottom-style: solid;
+	text-align: center;
+	font-weight: bold;
+	border-bottom-width: 0.7pt;
+	border-top-width: 0.7pt;
+	border-right-width: 0.7pt;
+	border-left-width: 0.7pt;
+	text-align: left;
+}
+table.Formulario
+{
+	background-color: #f2f6fc;
+	width: 100%;
+}
+table.Formulario td.CeldaEtiqueta
+{
+	width: 18%;
+}
+table.Formulario td.CeldaDatos
+{
+	width: 82%;
+}
+/* Estilos de Cajas con puntas Circulares */
+dl
+{
+	width: 240px;
+	margin: 0 0 20px 20px;
+	padding: 0;
+	background: url(Imagenes/box_bottom.gif) #ccc no-repeat left bottom;
+}
+
+dt
+{
+	margin: 0;
+	padding: 10px;
+	font-size: 130%;
+	background: #ccc url(Imagenes/box_top.gif) no-repeat top left;
+}
+dt .Titulo
+{
+	background-color: #9cf;
+}
+
+dd
+{
+	margin: 0 0 0 10px;
+	padding: 0 10px 10px 10px;
+	color: #666;
+	font-family: Verdana, sans-serif;
+	font-size: 85%;
+	background: url(Imagenes/arrow.gif) no-repeat 0 3px;
+}
+
+#blue, #blue dt
+{
+	background-color: #9cf;
+}
+
+#red, #red dt
+{
+	background-color: #c99;
+}
+
+#green, #green dt
+{
+	background-color: #cf9;
+}
+/* Estilos de Cajas con puntas Circulares */
+/* Login */
+table .loginusuario
+{
+	background-image: url(Imagenes/fondologin.png);
+	width: 360px;
+	height: 200px;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 10px;
+	color: #1c407a;
+}
+table .loginusuariocont
+{
+	width: 95%;
+	height: 95% margin-top:5px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+/* Esta tabla es la encargada de mantener el contenido de links y contenido de grilla o formulario */
+table .tablacontenedoraweb
+{
+	width: 95%;
+	height: 98%;
+	margin-top: 0px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+table .tablacontenedoraweb tr.links
+{
+	height: 25px;
+}
+table .tablacontenedoraweb tr.separador
+{
+	height: 10px;
+}
+table .tablacontenedoraweb tr.contenido
+{
+}
+.titulo
+{
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #B1B5BA;
+	cursor: pointer;
+}
+table .subpanel
+{
+	background-color: #f3f4f5;
+	font-family: Verdana;
+	width: 100%;
+	font-size: 9px;
+}
+table .subpanel tr.titulo
+{
+	color: #2c4059;
+	font-weight: bold;
+	background-color: #dddfe2;
+	cursor: pointer;
+	font-size: 10px;
+}
+table .subpanel tr.pie
+{
+	background-color: #f1f7fe;
+	color: #2c4059;
+}
+table .subpanel1
+{
+	background-color: #f6fcf4;
+	font-family: Verdana;
+	font-size: 9px;
+	color: #2a3e68;
+	width: 100%;
+	border-left-width: 0.5pt;
+	border-right-width: 0.5pt;
+	border-top-width: 0.5pt;
+	border-bottom-width: 0.5pt;
+	border-left-color: #d3d3d3;
+	border-bottom-color: #d3d3d3;
+	border-top-style: solid;
+	border-top-color: #d3d3d3;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #d3d3d3;
+	border-bottom-style: solid;
+}
+.cajavalor
+{
+	text-align: right;
+	font-family: Verdana;
+	font-size: 9px;
+	color: #000000;
+	width: 95%;
+}
+.textoizquierda
+{
+	text-align: left;
+}
+.CajaMensaje
+{
+	background-color: #ffffff;
+	color: #000000;
+}
+.TextoIluminado
+{
+	color: Red;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.PiePaginaTabs
+{
+}
+.titulogrilla
+{
+	color: #3a5e85;
+	font-weight: bold;
+	background-color: #dee8f5;
+	cursor: pointer;
+	text-align: center;
+}
+.controlespecial
+{
+	height: 34px;
+	width: 100%;
+	border-bottom-color: #ccd2d7;
+	border-top-color: #ccd2d7;
+	border-right-color: #ccd2d7;
+	border-left-color: #ccd2d7;
+	border-bottom-width: 0.5pt;
+	border-top-width: 0.5pt;
+	border-right-width: 0.5pt;
+	border-left-width: 0.5pt;
+	border-style: solid;
+	background-image: url(Imagenes/controlespecial.png);
+	background-repeat: repeat-x;
+	color: #10436e;
+	font-size: 9px;
+	font-family: Verdana;
+	font-weight: bold;
+}
+.hidden
+{
+	display: none;
+}
+
+.showed
+{
+	border: 2px solid #FF0000;
+	background-color: #FF6666;
+	color: #800000;
+	font-size: x-large;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 10px;
+	margin: 10px;
+	width: 200px;
+	text-align: center;
+}
+
+

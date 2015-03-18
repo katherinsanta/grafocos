@@ -1,0 +1,1009 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Codebehind="Master.master.cs" Inherits="Servipunto.AdministrativoEstacion.Web.PaginaMaestra.Master" %>
+<%@ Register Src="~/ControlesdelUsuario/Mensaje.ascx" TagName="Mensaje" TagPrefix="uc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>Servipunto Administrativo Automatización de Islas</title>
+    <link href="../Estilos/Estilo1/Estilo1.css" rel="stylesheet" type="text/css" />
+    <link href="../Estilos/Tab/css1.css" rel="stylesheet" type="text/css" />
+    <link href="../Javascript/AnulacionDeTiquete.js" type="text/javascript" />
+    <link href="../Javascript/AnulacionDeVale.js" type="text/javascript" />
+    <link href="../Javascript/AnulacionNotaDebito.js" type="text/javascript" />
+    <link href="../Javascript/AsignacionDeValeACliente.js" type="text/javascript" />
+    <link href="../Javascript/ReprocesoDetalleVale.js" type="text/javascript" />
+    <link href="../Javascript/Master.js" type="text/javascript" />
+    <link href="../Estilos/Estilo1/Estilo1.css" rel="stylesheet" type="text/css" />
+    <link href="../BlueSkin/NS.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript">
+ /******/
+    var caracter = window.Event ? true : false;
+    
+    function ValidarNumero(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key <= 13 || (key>= 48 && key <= 57) );
+    }
+
+    function ValidarNumeroDecimal(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key <= 13 || (key>= 48 && key <= 57) || key == 46);
+    }
+
+    function ValidarAlfanumerico(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key <= 13 || key == 95 (key>= 48 && key <= 57) || (key >= 65  && key <= 90) || (key >= 97  && key <= 122));
+    }
+      
+
+    function Calcular(evento, caso)
+    {    
+        var key = caracter ? evento.which : evento.keyCode;
+        if(key == 9)
+            return            
+        var total = parseFloat(window.document.getElementById('txtTotal').getAttribute("value"));
+        var cantidad  =  parseFloat(window.document.getElementById('txtCantidad').getAttribute("value"));
+        //var precio = parseFloat(window.document.getElementById('lblPrecio').innerText);
+        var precio = parseFloat(window.document.getElementById('txtPrecio').getAttribute("value"));
+        var resultado;
+        switch(caso)
+        {
+            case "Total":
+                resultado =  cantidad * precio;
+                if(isNaN(resultado))
+                    window.document.MyForm.txtTotal.value = 0
+                else 
+                    window.document.MyForm.txtTotal.value = resultado
+                break;                            
+            case "Cantidad":
+                resultado = total / precio;
+                if(isNaN(resultado))
+                    window.document.MyForm.txtCantidad.value = 0
+                else 
+                    window.document.MyForm.txtCantidad.value = resultado
+                    
+                if(window.document.getElementById('txtCantidad').getAttribute("value") == "Infinity")
+                    window.document.MyForm.txtCantidad.value = 0;
+                break;            
+        }       
+        /*
+        alert(total)
+        alert(cantidad)
+        alert(precio)
+        alert(resultado)
+        */
+        
+    }
+    
+    function moveVerticalScroll()
+    {
+        document.body.scrollTop=0;
+        //window.onload=moveVerticalScroll;
+    }
+
+
+
+    
+    function VentanaEmergente(caso)
+    {
+        switch(caso)
+        {
+            case "Tiquete":
+                var resultado = window.showModalDialog('../Busqueda/BuscadorDinamico.aspx?TipoDeBusqueda=TiqueteActivoAsignado','SelectValueWindow');              
+                if(resultado != null)
+                {
+                    var arreglo = resultado.split('©');
+                    document.getElementById("txtNumeroTiquete").value = arreglo[0];
+                    __doPostBack('btnConsultarTiquete', '' );
+                }
+                break;            
+            case "Articulo":
+                var resultado = window.showModalDialog('../Busqueda/BuscadorDinamico.aspx?TipoDeBusqueda=Articulo','SelectValueWindow');              
+                if(resultado != null)
+                {
+                    var arreglo = resultado.split('©');
+                    document.getElementById("txtCodigoArticulo").value = arreglo[0];
+                    document.getElementById("lblDescripcionArticulo").value = arreglo[1];
+                    document.getElementById("lblPresentacion").value = arreglo[2];
+                    __doPostBack('btnConsultarArticulo', '' );
+                }                
+                break;           
+            
+                 
+             case "Cliente":
+                var resultado = window.showModalDialog('../Busqueda/BuscadorDinamico.aspx?TipoDeBusqueda=Cliente','SelectValueWindow');
+                if(resultado != null)
+                {
+                    var arreglo = resultado.split('©');
+                    document.getElementById("txtIdentificacion").value = arreglo[0];
+                    document.getElementById("lblNombreCliente").value = arreglo[1];
+                    __doPostBack('btnConsultarCliente', '' );
+                }                                
+                break;
+        }       
+    }  
+    /*********/
+    function PestanaActiva(objeto,objeto_izq)
+    {
+        document.getElementById(objeto).className='pestana_activa';
+        document.getElementById(objeto_izq).className='PanelMenuCabeza_Activa';
+    }
+    function PaginaAnterior(objeto,objeto_izq)
+    {
+        document.getElementById(objeto).getAttribute='pestana_activa';
+        document.getElementById(objeto_izq).className='PanelMenuCabeza_Activa';
+    }
+        var caracter = window.Event ? true : false;
+    function ValidarNumero(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key <= 13 || (key>= 48 && key <= 57));
+    }
+   
+    function Calcular(evento, caso)
+    {        
+        var key = caracter ? evento.which : evento.keyCode;
+        if(key == 9)
+            return            
+
+        var numeroInicial = parseInt(window.document.getElementById('txtNumeroInicial').getAttribute("value"));
+        var catidad  =  parseInt(window.document.getElementById('txtCantidad').getAttribute("value"));        
+        var numeroFinal  =  parseInt(window.document.getElementById('txtNumeroFinal').getAttribute("value"));        
+        var resultado;
+        if(caso == "1")
+        {
+            resultado = numeroInicial + catidad - 1;    
+            if(isNaN(resultado))
+                window.document.MyForm.txtNumeroFinal.value = 0;                
+            else
+                window.document.MyForm.txtNumeroFinal.value = resultado;
+                
+        }
+        else
+        {
+            resultado = numeroFinal - numeroInicial + 1; 
+            if(isNaN(resultado))
+                window.document.MyForm.txtCantidad.value = 0;
+            else
+                window.document.MyForm.txtCantidad.value = resultado;
+        }
+    }
+
+    function VentanaEmergente()
+    {
+        if(document.getElementById("txtIdentificacion").disabled == true)
+            return;
+        var resultado = window.showModalDialog('../Busqueda/BuscadorDinamico.aspx?TipoDeBusqueda=ClienteParaVale','SelectValueWindow');              
+        if(resultado != null)
+        {
+            var arreglo = resultado.split('©');
+            document.getElementById("txtIdentificacion").value = arreglo[0];
+            document.getElementById("txtNombreRazonSocial").value = arreglo[1];
+            //document.getElementById("lblFormTitle").Text = arreglo[1];                        
+        }
+    }  
+    /*******/
+    function NoEdicion(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key > 300);
+    }   
+
+    
+		    function formularioEmergente()
+		    {
+		        window.showModalDialog('ArticulosPorListaDePrecio.aspx',window,'dialogWidth:600px;dialogHeight:200px;resizable:no;center:yes');
+            }
+            var nav4 = window.Event ? true : false;
+            function acceptNum(evt)
+                {   
+                    var key = nav4 ? evt.which : evt.keyCode;   
+                    return (key <= 13 || (key>= 48 && key <= 57));
+                }
+
+    
+
+    
+    var caracter = window.Event ? true : false;
+    function ValidarNumero(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key <= 13 || (key>= 48 && key <= 57));
+    }
+    
+    function ValidarNumeroDecimal(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key <= 13 || (key>= 48 && key <= 57) || key == 44  || key == 46);
+    }
+    
+        function setMaxLength() {    
+        var x = document.getElementsByTagName('textarea');    
+        var counter = document.createElement('div');    
+        counter.className = 'counter';    
+        for (var i=0;i<x.length;i++) {        
+            if (x[i].getAttribute('maxlength')) {            
+                var counterClone = counter.cloneNode(true);            
+                counterClone.relatedElement = x[i];            
+                counterClone.innerHTML = '<span>0</span>/'+x[i].getAttribute('maxlength');            
+                x[i].parentNode.insertBefore(counterClone,x[i].nextSibling);            
+                x[i].relatedElement = counterClone.getElementsByTagName('span')[0];            
+                x[i].onkeyup = x[i].onchange = checkMaxLength;            
+                x[i].onkeyup();        
+                }    
+            }
+        }
+    
+    function checkMaxLength() {    
+        var maxLength = this.getAttribute('maxlength');    
+        var currentLength = this.value.length;    
+        if (currentLength > maxLength)        
+            this.relatedElement.className = 'toomuch';    
+        else        
+            this.relatedElement.className = '';    
+        this.relatedElement.firstChild.nodeValue = currentLength;    // not innerHTML
+        }
+        function ValidarCaracteres(textareaControl,maxlength){                     
+            if (textareaControl.value.length > maxlength){            
+            textareaControl.value = textareaControl.value.substring(0,maxlength);            
+            alert("Debe ingresar hasta un maximo de "+maxlength+" caracteres");        
+            }    
+        }
+    </script>
+
+    <link href="../Estilos/Estilo1/Estilo1.css" rel="stylesheet" type="text/css" />
+</head>
+<body runat="server" id="body1">
+    <form id="form1" runat="server">
+        <div>
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <table cellpadding="0" cellspacing="0" class="ContenedorPrincipal" style="height: 95%">
+                <tr>
+                    <td align="center" valign="top" class="Contenido" style="height: 100%">
+                        <table cellpadding="0" cellspacing="0" class="ContenedorSecundario">
+                            <tr>
+                                <td class="Cabeza" style="height: 15%">
+                                    <!-- ESPACIO DE CABEZA -->
+                                    <table cellpadding="0" cellspacing="0" class="CabezaLogo">
+                                        <tr>
+                                            <td class="Logo">
+                                                <asp:Image ID="imgLogoCompania" runat="server" ImageUrl="~/Estilos/Estilo1/Imagenes/Logoen.png"
+                                                    Height="59" />
+                                            </td>
+                                            <td class="pie" valign="top">
+                                                <!-- ESPACIO DE CABEZA -->
+                                                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+                                                    width="820" height="59px">
+                                                    <param name="movie" value="../../Estilos/Estilo1/swf/banner.swf" />
+                                                    <param name="quality" value="high" />
+                                                    <param name="Src" value="../../Estilos/Estilo1/swf/banner.swf" />
+                                                </object>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td valign="bottom" align="left">
+                                                <!-- NAVEGADOR -->
+                                                <table cellpadding="0" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td valign="middle">
+                                                            <!--* -->
+                                                            <table cellpadding="0" cellspacing="0" width="100%" border="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        <asp:Label ID="lblLogoCompania" runat="server" Visible="False" Font-Size="Smaller"></asp:Label>
+                                                                    </td>
+                                                                    <td>
+                                                                        <!--NAV -->
+                                                                        <table cellpadding="0" cellspacing="0" class="Pestanas">
+                                                                            <tr align="center">
+                                                                                <td id="pest1" class="pestana" onclick="javascript:location.href('../PanelControl/Default.aspx');">
+                                                                                    <asp:HyperLink ID="HyperLink13" ForeColor="whiteSmoke" runat="server" NavigateUrl="~/Modules/PanelControl/Default.aspx">
+                                                                                        <asp:Label ID="lblPestPanelControl" runat="server" Text="Panel de Control"></asp:Label></asp:HyperLink></td>
+                                                                                <td id="pest2" class="pestana" onclick="javascript:location.href('../Comerciales/Default.aspx');">
+                                                                                <asp:HyperLink ID="HyperLink14" ForeColor="whiteSmoke" runat="server" NavigateUrl="~/Modules/Comerciales/Default.aspx">
+                                                                                    <asp:Label ID="lblPestComercial" runat="server" Text="Comerciales"></asp:Label></asp:HyperLink></td>                                                                                    
+                                                                                <td id="pest3" class="pestana" onclick="javascript:location.href('../ReportesEstacion/Default.aspx');">
+                                                                                <asp:HyperLink ID="HyperLink17" ForeColor="whiteSmoke" runat="server" NavigateUrl="~/Modules/ReportesEstacion/Default.aspx">
+                                                                                    <asp:Label ID="lblPestReportes" runat="server" Text="Reportes"></asp:Label></asp:HyperLink></td>
+                                                                                <td id="pest4" class="pestana" onclick="javascript:location.href('../Procesos/Default.aspx');">
+                                                                                <asp:HyperLink ID="HyperLink18" ForeColor="whiteSmoke" runat="server" NavigateUrl="~/Modules/Procesos/Default.aspx">
+                                                                                    <asp:Label ID="lblPestProcesos" runat="server" Text="Procesos"></asp:Label></asp:HyperLink></td>
+                                                                                <td id="pest5" class="pestana" onclick="javascript:location.href('../Variaciones/Default.aspx');">
+                                                                                <asp:HyperLink ID="HyperLink19" ForeColor="whiteSmoke" runat="server" NavigateUrl="~/Modules/Variaciones/Default.aspx">
+                                                                                    <asp:Label ID="lblPestVariaciones" runat="server" Text="Variaciones"></asp:Label></asp:HyperLink></td>
+                                                                                    
+                                                                                 <td id="pest7" class="pestana" onclick="javascript:location.href('../Prepagos/Default.aspx');">
+                                                                                <asp:HyperLink ID="HyperLink22" ForeColor="whiteSmoke" runat="server" NavigateUrl="~/Modules/Prepagos/default.aspx">
+                                                                                    <asp:Label ID="lblPestPrepagos" runat="server" Text="Prepaid"></asp:Label></asp:HyperLink></td>
+                                                                                    
+                                                                                <td id="pest6" class="pestana" onclick="javascript:location.href('../Consultas/Default.aspx');">
+                                                                                <asp:HyperLink ID="HyperLink20" ForeColor="whiteSmoke" runat="server" NavigateUrl="~/Modules/Consultas/default.aspx">
+                                                                                    <asp:Label ID="lblPestConsultas" runat="server" Text="Consultas"></asp:Label></asp:HyperLink></td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <!--NAV -->
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!--* -->
+                                                        </td>
+                                                        <td valign="top" align="center">
+                                                            <!-- LINKS -->
+                                                            <table cellpadding="4" cellspacing="1" class="ContenedorLinks">
+                                                                <tr>
+                                                                    <td>
+                                                                        <a href="" class="Link1">
+                                                                            <asp:Label ID="lblRol" runat="server"></asp:Label>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="" class="Link1">
+                                                                            <asp:Label ID="lblFecha" runat="server"></asp:Label>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="" class="Link1">
+                                                                            <asp:Label ID="lblUsuario" runat="server"></asp:Label>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="" class="Link1">&nbsp;</a><asp:LinkButton ID="LnkBtnContraseña" runat="server"
+                                                                            OnClick="LnkBtnContraseña_Click">Cambiar Contraseña</asp:LinkButton></td>
+                                                                    <td>
+                                                                        <asp:LinkButton ID="LnkCerrar" CssClass="Link1" runat="server" Text="Cerrar Sesión"
+                                                                            OnClick="LnkCerrar_Click"></asp:LinkButton>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- LINKS -->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- NAVEGADOR -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- ESPACIO DE CABEZA -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="Contenido" style="height: 80%">
+                                    <!--CONTENIDO DE PAGINA-->
+                                    <table cellpadding="0" cellspacing="0" class="Contenido">
+                                        <tr>
+                                            <td class="Menu" valign="top">
+                                                <!--CONTENIDO DE MENU -->
+                                                <table cellpadding="0" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td id="pesti1" class="PanelMenuCabeza" valign="middle" style="width: 185px">
+                                                            <asp:Panel ID="PnlPanelControlCabeza" runat="server">
+                                                                <asp:Label ID="lblMvPanelControl" runat="server" Text="Panel de Control"></asp:Label></asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 185px">
+                                                            <asp:Panel ID="PnlPanelControl" runat="server" Width="100%">
+                                                                <table cellpadding="1" cellspacing="1" width="100%" class="GrillaMenu">
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="ImgArrow" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink1" Text="Perfiles de Usuario" NavigateUrl="~/Modules/PanelControl/Roles.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image1" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink2" Text="Usuarios" NavigateUrl="~/Modules/PanelControl/Usuarios.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image3" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink4" Text="Artículos" NavigateUrl="~/Modules/PanelControl/Articulos.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image4" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink5" Text="Formas de Pago" NavigateUrl="~/Modules/PanelControl/FormasPago.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image5" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink6" Text="Compañia" NavigateUrl="~/Modules/PanelControl/Companias.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image53" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink54" Text="Grupos" NavigateUrl="~/Modules/PanelControl/Grupos.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image2" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Modules/PanelControl/Puertos.aspx"
+                                                                                Text="Puertos"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image6" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink25" runat="server" NavigateUrl="~/Modules/PanelControl/Lectores.aspx"
+                                                                                Text="Lectores"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image8" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink33" runat="server" NavigateUrl="~/Modules/PanelControl/Controladores.aspx"
+                                                                                Text="Controladores"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image9" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink34" runat="server" NavigateUrl="~/Modules/PanelControl/Capturadores.aspx"
+                                                                                Text="Capturadores"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image12" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Modules/PanelControl/Estaciones.aspx"
+                                                                                Text="Estacion"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image10" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink47" runat="server" NavigateUrl="~/Modules/PanelControl/Poss.aspx"
+                                                                                Text="POS"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image11" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink52" runat="server" NavigateUrl="~/Modules/PanelControl/Empleados.aspx"
+                                                                                Text="Empleados"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image19" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink59" runat="server" NavigateUrl="~/Modules/PanelControl/DatosGenerales.aspx"
+                                                                                Text="Datos Generales"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image21" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink57" runat="server" NavigateUrl="~/Modules/PanelControl/TiposComunicaciones.aspx"
+                                                                                Text="Tipos de Comunicaciones"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image22" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink58" runat="server" NavigateUrl="~/Modules/PanelControl/Tanques.aspx"
+                                                                                Text="Tanques"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image23" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            &nbsp;<asp:HyperLink ID="HyperLink55" runat="server" NavigateUrl="~/Modules/PanelControl/PreciosProgramados.aspx"
+                                                                                Text="Precios Programados"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image24" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink60" runat="server" NavigateUrl="~/Modules/PanelControl/ConfVentasGratis.aspx"
+                                                                                Text="Ventas Gratis"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image25" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink61" runat="server" NavigateUrl="~/Modules/PanelControl/Bol_NumOrdenes.aspx"
+                                                                                Text="Resolución Facturas"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image26" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink62" runat="server" NavigateUrl="~/Modules/PanelControl/SelfServices.aspx"
+                                                                                Text="Selfservice"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image27" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink63" runat="server" NavigateUrl="~/Modules/PanelControl/Departamentos.aspx"
+                                                                                Text="Lugares"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image28" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink64" runat="server" NavigateUrl="~/Modules/PanelControl/InterfazContable.aspx"
+                                                                                Text="Interfaz Contable"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image29" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink65" runat="server" NavigateUrl="~/Modules/PanelControl/Mantenimiento.aspx"
+                                                                                Text="Mantenimiento"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image30" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td style="width: 511px">
+                                                                            <asp:HyperLink ID="HyperLink66" runat="server" NavigateUrl="~/Modules/PanelControl/ConfiguracionTiqueteVenta.aspx"
+                                                                                Text="Tiquete de Venta"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                </table>
+                                                            </asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="pesti2" class="PanelMenuCabeza" valign="middle" style="width: 185px">
+                                                            <asp:Panel ID="PnlArticulosMenuCabeza" runat="server">
+                                                                <asp:Label ID="lblMvComercial" runat="server" Text="Comerciales"></asp:Label></asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 185px">
+                                                            <asp:Panel ID="PnlArticulos" runat="server" Width="100%">
+                                                                <table cellpadding="1" cellspacing="1" width="100%" class="GrillaMenu">
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image31" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink32" Text="Clientes" NavigateUrl="~/Modules/Comerciales/Clientes.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image7" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink8" Text="Precios Diferenciales" NavigateUrl="~/Modules/Comerciales/ListaPreciosDiferenciales.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="pesti3" class="PanelMenuCabeza" valign="middle" style="width: 185px">
+                                                            <asp:Panel ID="PnlClientesMenuCabeza" runat="server">
+                                                                <asp:Label ID="lblMvReportes" runat="server" Text="Reportes"></asp:Label></asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 185px">
+                                                            <asp:Panel ID="PnlClientesMenu" runat="server" Width="100%">
+                                                                <table cellpadding="1" cellspacing="1" width="100%" class="GrillaMenu">
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image35" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink36" Text="Generales" NavigateUrl="~/Modules/ReportesEstacion/ReportesGenerales.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image40" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink41" Text="Forma de Pago" NavigateUrl="~/Modules/ReportesEstacion/ReportesFormaPago.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image36" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink37" Text="Periodo de Tiempo" NavigateUrl="~/Modules/ReportesEstacion/ReportesPeriodoTiempo.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image50" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink51" Text="Clientes" NavigateUrl="~/Modules/ReportesEstacion/ReportesClientes.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image13" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink9" Text="Vehiculos" NavigateUrl="~/Modules/ReportesEstacion/ReportesAutomotor.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image16" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink10" Text="Credito Directo" NavigateUrl="~/Modules/ReportesEstacion/ReportesCreditoDirecto.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image17" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink11" Text="Facturacion" NavigateUrl="~/Modules/ReportesEstacion/ReportesFacturacion.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image37" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink38" Text="Recaudo" NavigateUrl="~/Modules/ReportesEstacion/ReportesRecaudo.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image18" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink12" Text="Auditoria" NavigateUrl="~/Modules/ReportesEstacion/ReportesAuditoria.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="pesti4" class="PanelMenuCabeza" valign="middle" style="width: 185px">
+                                                            <asp:Panel ID="PnlFacturacionMenuCabeza" runat="server">
+                                                                <asp:Label ID="lblMvProcesos" runat="server" Text="Procesos"></asp:Label></asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 185px">
+                                                            <asp:Panel ID="PnlFacturacionMenu" runat="server" Width="100%">
+                                                                <table cellpadding="1" cellspacing="1" width="100%" class="GrillaMenu">
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image41" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink42" Text="Sincronización Externa GNV" NavigateUrl="~/Modules/Procesos/OpcionesGNV.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image43" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink44" Text="Archivos Planos Contables" NavigateUrl="~/Modules/Procesos/InterfazContable.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image44" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink45" Text="Archivos Planos Recaudo" NavigateUrl="~/Modules/Procesos/InterfazRecaudoGDO.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image45" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink46" Text="Ajuste de Pagos" NavigateUrl="~/Modules/Procesos/AjustePago.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="pesti5" class="PanelMenuCabeza" valign="middle" style="width: 185px">
+                                                            <asp:Panel ID="PnlCarteraMenuCabeza" runat="server">
+                                                                <asp:Label ID="lblMvVariaciones" runat="server" Text="Variaciones"></asp:Label></asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 185px">
+                                                            <asp:Panel ID="PnlCarteraMenu" runat="server" Width="100%">
+                                                                <table cellpadding="1" cellspacing="1" width="100%" class="GrillaMenu">
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image14" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink15" Text="Mensajes Variación" NavigateUrl="~/Modules/Variaciones/Tanques.aspx"
+                                                                                runat="server"></asp:HyperLink></td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image15" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink16" Text="Apertura / Cierre Zeta" NavigateUrl="~/Modules/Variaciones/Zetas.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="pesti6" class="PanelMenuCabeza" valign="middle" style="width: 185px">
+                                                            <asp:Panel ID="PnlProcesosMenuCabeza" runat="server">
+                                                                <asp:Label ID="lblMvConsultas" runat="server" Text="Consultas"></asp:Label></asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 185px">
+                                                            <asp:Panel ID="PnlProcesosMenu" runat="server" Width="100%">
+                                                                <table cellpadding="1" cellspacing="1" width="100%" class="GrillaMenu">
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image20" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink21" Text="Facturas Canastilla" NavigateUrl="~/Modules/Consultas/Default.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                     <tr>
+                                                        <td id="Td1" class="PanelMenuCabeza" valign="middle" style="width: 185px">
+                                                            <asp:Panel ID="Panel2" runat="server">
+                                                                <asp:Label ID="lblMPrepagos" runat="server" Text="Prepaid"></asp:Label></asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                     <tr>
+                                                        <td style="width: 185px">
+                                                            <asp:Panel ID="pnlPrepagos" runat="server" Width="100%">
+                                                                <table cellpadding="1" cellspacing="1" width="100%" class="GrillaMenu">
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image32" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink23" Text="Creación" NavigateUrl="~/Modules/prepagos/Creaciones.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image33" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink24" Text="Asignacion" NavigateUrl="~/Modules/prepagos/Creaciones.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>                                                                    
+                                                                    <tr class="FilaNormal">
+                                                                        <td>
+                                                                            <asp:Image ID="Image38" ImageUrl="~/Estilos/Estilo1/Imagenes/arrow.gif" runat="server" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:HyperLink ID="HyperLink27" Text="Utilizacion" NavigateUrl="~/Modules/prepagos/Creaciones.aspx"
+                                                                                runat="server"></asp:HyperLink>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </asp:Panel>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!--CONTENIDO DE MENU -->
+                                            </td>
+                                            <td class="ContenidoPagina" valign="top">
+                                                <!-- * -->
+                                                <table cellpadding="0" cellspacing="0" class="ContenidoPaginaPanel">
+                                                    <tr class="PanelInformacion">
+                                                        <td>
+                                                            <!-- Panel de Informacion -->
+                                                            <table cellpadding="0" cellspacing="0" class="PanelTituloPagina">
+                                                                <tr>
+                                                                    <td class="Icono">
+                                                                        <!--Imagen 48 * 48 -->
+                                                                        <asp:Image ID="ImgImagenPagina" ImageUrl="~/Estilos/Estilo1/Imagenes/Arrow.png" runat="server" />
+                                                                        <!--Imagen 48 * 48 -->
+                                                                    </td>
+                                                                    <td class="Titulo">
+                                                                        <!-- Titulo de Página -->
+                                                                        &nbsp;<asp:Label ID="LblMensajePagina" runat="server" Text="Servipunto Administrativo Automatización de Islas"></asp:Label>
+                                                                        <!-- Titulo de Página -->
+                                                                    </td>
+                                                                    <td class="Detalle">
+                                                                        <!-- Detalle -->
+                                                                        <asp:Label ID="LblDescripcionPagina" runat="server" Text=""></asp:Label>
+                                                                        <!-- Detalle -->
+                                                                    </td>
+                                                                    <td class="Volver">
+                                                                        <!-- Volver -->
+                                                                        <table cellpadding="1" cellspacing="1" width="100%">
+                                                                            <tr align="center">
+                                                                                <td style="height: 36px">
+                                                                                    <asp:HyperLink Style="cursor: pointer;" onclick="javascript:history.back(1);" ID="hlnkvolver"
+                                                                                        ImageUrl="~/Estilos/Estilo1/Imagenes/left.png" runat="server"></asp:HyperLink>
+                                                                                </td>
+                                                                                <td style="height: 36px">
+                                                                                    <asp:ImageButton ToolTip="Ir a la página principal." ImageUrl="~/Estilos/Estilo1/Imagenes/home.png"
+                                                                                        ID="ImgHome" runat="server" OnClick="ImgHome_Click" /></td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <!-- Volver -->
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- Panel de Informacion -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="Separador">
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="Pagina">
+                                                        <td style="height: 248px">
+                                                            <!-- PÁGINA -->
+                                                            <asp:ContentPlaceHolder ID="ContenidoMaestro1" runat="server">
+                                                            </asp:ContentPlaceHolder>
+                                                            <!-- PÁGINA -->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- * -->
+                                            </td>
+                                    </table>
+                            </tr>
+                            <tr>
+                                <td class="Pie" style="height: 4%">
+                                    <!-- CONTENIDO DE PIE -->
+                                    <table cellpadding="1" cellspacing="1" width="100%">
+                                        <tr>
+                                            <td width="15%" style="height: 51px">
+                                                <!-- LOGO -->
+                                                <asp:ImageButton ID="ImgServipunto" runat="server" ImageUrl="~/BlueSkin/Images/2011/Logo-Servipunto.png"
+                                                    OnClick="ImgServipunto_Click" /><!-- LOGO --></td>
+                                            <td width="85%" style="height: 51px">
+                                                <!-- CONTENDEOR PIE -->
+                                                <table cellpadding="0" cellspacing="0" class="ContenedorPie" style="height: 32px">
+                                                    <tr>
+                                                        <td style="height: 16px">
+                                                            <asp:Label ID="lblVersion" runat="server" Text="Versión"></asp:Label>
+                                                            <asp:Label ID="lblNumVersion" runat="server" Text="5.5"></asp:Label>
+                                                            <asp:Label ID="lblAVisoLegal" runat="server" Text="[Aviso Legal] [Privacidad]"></asp:Label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 5px">
+                                                            <p>
+                                                                Copyright 2011</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 2px">
+                                                            <p>
+                                                                <asp:HyperLink ID="hipServipunto" runat="server" NavigateUrl="http://www.servipunto.com">Zencillo de Software</asp:HyperLink>
+                                                                <a class="Link2" href="http://www.servipunto.com/" id="lnkServipunto"></a>&nbsp;&nbsp;<asp:Label
+                                                                    ID="lblDerechos" runat="server" Height="13px" Text="Todos los Derechos Reservados."></asp:Label></p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- CONTENDEOR PIE -->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- CONTENIDO DE PIE -->
+                    </td>
+                </tr>
+            </table>
+            <cc1:CollapsiblePanelExtender ID="ClpPanelControl" runat="server" TargetControlID="PnlPanelControl"
+                ExpandControlID="PnlPanelControlCabeza" CollapseControlID="PnlPanelControlCabeza"
+                Collapsed="True" TextLabelID="Label1" ImageControlID="Image1" ExpandedText="(Hide Details...)"
+                CollapsedText="(Show Details...)" SuppressPostBack="true">
+            </cc1:CollapsiblePanelExtender>
+            <cc1:CollapsiblePanelExtender ID="ClpArticulo" runat="server" TargetControlID="PnlArticulos"
+                ExpandControlID="PnlArticulosMenuCabeza" CollapseControlID="PnlArticulosMenuCabeza"
+                Collapsed="True" TextLabelID="Label1" ImageControlID="Image1" ExpandedText="(Hide Details...)"
+                CollapsedText="(Show Details...)" SuppressPostBack="true">
+            </cc1:CollapsiblePanelExtender>
+            <cc1:CollapsiblePanelExtender ID="ClpClientes" runat="server" TargetControlID="PnlClientesMenu"
+                ExpandControlID="PnlClientesMenuCabeza" CollapseControlID="PnlClientesMenuCabeza"
+                Collapsed="True" TextLabelID="Label1" ImageControlID="Image1" ExpandedText="(Hide Details...)"
+                CollapsedText="(Show Details...)" SuppressPostBack="true">
+            </cc1:CollapsiblePanelExtender>
+            <cc1:CollapsiblePanelExtender ID="ClpFacturacion" runat="server" TargetControlID="PnlFacturacionMenu"
+                ExpandControlID="PnlFacturacionMenuCabeza" CollapseControlID="PnlFacturacionMenuCabeza"
+                Collapsed="True" TextLabelID="Label1" ImageControlID="Image1" ExpandedText="(Hide Details...)"
+                CollapsedText="(Show Details...)" SuppressPostBack="true">
+            </cc1:CollapsiblePanelExtender>
+            <cc1:CollapsiblePanelExtender ID="ClpCartera" runat="server" TargetControlID="PnlCarteraMenu"
+                ExpandControlID="PnlCarteraMenuCabeza" CollapseControlID="PnlCarteraMenuCabeza"
+                Collapsed="True" TextLabelID="Label1" ImageControlID="Image1" ExpandedText="(Hide Details...)"
+                CollapsedText="(Show Details...)" SuppressPostBack="true">
+            </cc1:CollapsiblePanelExtender>
+            <cc1:CollapsiblePanelExtender ID="CollapsiblePanelExtender1" runat="server" TargetControlID="PnlProcesosMenu"
+                ExpandControlID="PnlProcesosMenuCabeza" CollapseControlID="PnlProcesosMenuCabeza"
+                Collapsed="True" TextLabelID="Label1" ImageControlID="Image1" ExpandedText="(Hide Details...)"
+                CollapsedText="(Show Details...)" SuppressPostBack="true">
+            </cc1:CollapsiblePanelExtender>
+        </div>
+    </form>
+</body>
+</html>

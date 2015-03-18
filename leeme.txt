@@ -1,0 +1,5 @@
+se realizan cambio en dat gene ---------------no guarda las direcciones de generacion de archivos planos de ventas y lecturas
+se cambia el tipo de descuento ---------------descuento por valor o convertimos en una variable de tipo int (era de tipo decimal)
+----------------------------11-08-2011
+se cambia en articulos-------------------------el campo precio se cambio para que reciva , y . 
+como decimales el sistema por defecto me inserta los de la configuracionh regional

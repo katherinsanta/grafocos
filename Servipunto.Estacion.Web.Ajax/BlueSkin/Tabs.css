@@ -1,0 +1,31 @@
+.tabOn
+{
+	FONT-FAMILY: Tahoma Bold;
+	font-style:italic;
+	font-weight:bold;
+	FONT-SIZE: 9;
+	TEXT-ALIGN: CENTER;
+	COLOR: #93BEE2;
+	BACKGROUND-COLOR: #0346BE;
+	CURSOR: HAND;
+}
+
+.tabOff
+{
+	FONT-FAMILY: Tahoma;
+	FONT-SIZE: 9;
+	TEXT-ALIGN: CENTER;
+	COLOR: #0346BE;
+	BACKGROUND-COLOR: #93BEE2;
+	CURSOR: HAND;
+}
+
+.Visible
+{
+	 DISPLAY:block
+}
+
+.Oculto 
+{
+	DISPLAY:none
+}

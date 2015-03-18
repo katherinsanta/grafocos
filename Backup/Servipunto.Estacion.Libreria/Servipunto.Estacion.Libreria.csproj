@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C05B683A-769A-46FB-92B2-2107147D2937}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Servipunto.Estacion.Libreria</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Servipunto.Estacion.Libreria</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>Servipunto.Estacion.Libreria.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiveReports.Viewer3, Version=5.2.1236.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff" />
+    <Reference Include="ActiveReports3, Version=5.2.1236.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff" />
+    <Reference Include="ChilkatDotNet">
+      <Name>ChilkatDotNet</Name>
+      <HintPath>bin\Debug\ChilkatDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="GotDotNet.ApplicationBlocks.Data">
+      <Name>GotDotNet.ApplicationBlocks.Data</Name>
+      <HintPath>bin\Debug\GotDotNet.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="HardTech.HardLibrary, Version=1.0.4199.16763, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Miguel Cantor L\COLOMBIA\Servipunto Suite 5.1.05 - copia\bin\HardTech.HardLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <Name>ICSharpCode.SharpZipLib</Name>
+      <HintPath>bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <Name>Microsoft.ApplicationBlocks.Data</Name>
+      <HintPath>bin\Debug\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.DQE.SqlServer.NET20, Version=2.6.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LblGen\bin\Debug\SD.LLBLGen.Pro.DQE.SqlServer.NET20.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses.NET20, Version=2.6.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LblGen\bin\Debug\SD.LLBLGen.Pro.ORMSupportClasses.NET20.dll</HintPath>
+    </Reference>
+    <Reference Include="SerialPorts">
+      <Name>SerialPorts</Name>
+      <HintPath>bin\Debug\SerialPorts.dll</HintPath>
+    </Reference>
+    <Reference Include="Servipunto.Auditoria.Libreria">
+      <Name>Servipunto.Auditoria.Libreria</Name>
+      <HintPath>bin\Debug\Servipunto.Auditoria.Libreria.dll</HintPath>
+    </Reference>
+    <Reference Include="Servipunto.Estacion.AccesoDatos, Version=1.0.3765.35350, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Servipunto.Estacion.AccesoDatos.dll</HintPath>
+    </Reference>
+    <Reference Include="Servipunto.Libreria">
+      <Name>Servipunto.Libreria</Name>
+      <HintPath>bin\Debug\Servipunto.Libreria.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administradorarchivos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aplicacion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Articulo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Articulos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Auditoria.cs" />
+    <Compile Include="Auditorias.cs" />
+    <Compile Include="BusquedaDinamica.cs" />
+    <Compile Include="CargarPlanosGNV\PlanosGNV.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cliente.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Clientes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\AutoCombustible.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\AutoCombustibles.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\Automotor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\Automotores.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\CausalBloqueo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\CausalesBloqueo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\Cliente.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\Clientes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\Credito.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\Creditos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\CupoAutomotor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\CupoCliente.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\CuposAutomotor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\CuposCliente.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\PrecioDiferencial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\PreciosDiferenciales.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\Restriccion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\Restricciones.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comercial\TipoAutomotor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Alarma.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Alarmas.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Articulo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Articulos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Bol_NumOrden.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Bol_NumOrdenes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Capturador.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Capturadores.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Cara.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Caras.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Ciudad.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Ciudades.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Compania.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Companias.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Comunicacion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Comunicaciones.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\ConceptoOtroIngreso.cs" />
+    <Compile Include="Configuracion\ConceptoOtrosIngresos.cs" />
+    <Compile Include="Configuracion\Conductor.cs" />
+    <Compile Include="Configuracion\Conductores.cs" />
+    <Compile Include="Configuracion\ConfiguracionDescuento.cs" />
+    <Compile Include="Configuracion\ConfiguracionDescuentos.cs" />
+    <Compile Include="Configuracion\ConfiguracionesTiqueteVenta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\ConfiguracionesZetaAutomatico.cs" />
+    <Compile Include="Configuracion\ConfiguracionTiqueteVenta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\ConfiguracionZetaAutomatica.cs" />
+    <Compile Include="Configuracion\Tanques\ConsolaTanques.cs" />
+    <Compile Include="Configuracion\Tanques\ConsolaTanque.cs" />
+    <Compile Include="Configuracion\Controlador.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Controladores.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Datos_Gene.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Dat_Gene.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Departamento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Departamentos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Empleado.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Empleados.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Estacion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Estaciones.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\FormaPago.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\FormasPago.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Grupo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Grupos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Identificador.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\IdentificadorConductor.cs" />
+    <Compile Include="Configuracion\Identificadores.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\IdentificadoresConductor.cs" />
+    <Compile Include="Configuracion\Impresora.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Impresoras.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Isla.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Islas.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Lector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Lectores.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Manguera.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Mangueras.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Pais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Paises.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\PalabraIdioma.cs" />
+    <Compile Include="Configuracion\PalabrasIdioma.cs" />
+    <Compile Include="Configuracion\POS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\POSs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\PreciosProgramados\DetallePreciosProgramados.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\PreciosProgramados\PrecioProgramado.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\PreciosProgramados\PreciosProgramados.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Puerto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Puertos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Selfservice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Selfservices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Surtidor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Surtidores.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Tanques\Tanque.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Tanques\Tanques.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Tanques\TanqueVariacion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Tanques\TanqueVariaciones.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Tanques\TanqueVariacionMensaje.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Tanques\TanqueVariacionMensajes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConsultaCanastillaGrilla.cs" />
+    <Compile Include="Empleado.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Empleados.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Enumerados.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExtractoDetallado.cs" />
+    <Compile Include="FormaPago.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FormasPago.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HardWareDetection\DSDetection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HardWareDetection\PrintersDetection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HardWareDetection\SerialPortsDetection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IbuttonInterface\Encripcion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IbuttonInterface\IbuttonAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterfazContable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterfazContables.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InventarioItemCanastilla.cs" />
+    <Compile Include="InventarioItemsCanastilla.cs" />
+    <Compile Include="Pago.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PagoAuditoria.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pagos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PagosAuditoria.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Prepagos\CreacionesPrepago.cs" />
+    <Compile Include="Prepagos\CreacionPrepago.cs" />
+    <Compile Include="Prepagos\Denominacion.cs" />
+    <Compile Include="Prepagos\Denominaciones.cs" />
+    <Compile Include="Prepagos\Prepago.cs" />
+    <Compile Include="Prepagos\Prepagos.cs" />
+    <Compile Include="ProcesosEspeciales.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RegistroCompraCanastilla.cs" />
+    <Compile Include="RegistroOtroIngreso.cs" />
+    <Compile Include="RegistrosCompraCanastilla.cs" />
+    <Compile Include="RegistrosOtrosIngresos.cs" />
+    <Compile Include="Seguridad\Accion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Acciones.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Modulo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Modulos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Opcion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Opciones.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Permiso.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Permisos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Rol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Roles.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Usuario.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\UsuarioLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Usuarios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TipoAutorizacionExterna.cs" />
+    <Compile Include="TiposAutorizacionExterna.cs" />
+    <Compile Include="TiposDeAutomotor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiposDeEmpleado.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Turnos\JornadasZeta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Turnos\JornadaZeta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Turnos\TurnoLaboral.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Turnos\TurnosLaborales.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilidades.cs" />
+    <Compile Include="UtilidadesGenerales.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Venta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ventas.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZipUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Procesos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

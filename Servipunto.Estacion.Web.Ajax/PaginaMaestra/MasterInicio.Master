@@ -1,0 +1,226 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Codebehind="MasterInicio.master.cs"
+    Inherits="Servipunto.ZencilloCartera.Web.PaginaMaestra.MasterInicio" %>
+<%@ Register Src="~/ControlesdelUsuario/Mensaje.ascx" TagName="Mensaje" TagPrefix="uc1" %>
+<%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+    Namespace="System.Web.UI" TagPrefix="asp" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Página sin título</title>
+    <link href="../Estilos/Estilo1/Estilo1.css" rel="stylesheet" type="text/css" />
+    <link href="../Estilos/Tab/css1.css" rel="stylesheet" type="text/css" />
+    <link href="../Javascript/MasterInicio.js" type="text/javascript" />
+    <link href="../Javascript/AnulacionDeTiquete.js" type="text/javascript" />
+    <link href="../Javascript/AnulacionDeVale.js" type="text/javascript" />
+    <link href="../Javascript/AnulacionNotaDebito.js" type="text/javascript" />
+    <link href="../Javascript/AsignacionDeValeACliente.js" type="text/javascript" />
+    <link href="../Javascript/ReprocesoDetalleVale.js" type="text/javascript" />
+    <link href="../Javascript/Master.js" type="text/javascript" />
+    <link href="../BlueSkin/NS.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript">function PestanaActiva(objeto,objeto_izq)
+    {
+        document.getElementById(objeto).className='pestana_activa';
+        document.getElementById(objeto_izq).className='PanelMenuCabeza_Activa';
+    }
+    </script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ScriptManager ID="ScriptManager2" runat="server">
+            </asp:ScriptManager>
+            <table cellpadding="0" cellspacing="0" class="ContenedorPrincipal">
+                <tr>
+                    <td align="center" valign="top" class="Contenido">
+                        <table cellpadding="0" cellspacing="0" class="ContenedorSecundario">
+                            <tr>
+                                <td class="Cabeza">
+                                    <!-- ESPACIO DE CABEZA -->
+                                    <table cellpadding="0" cellspacing="0" class="CabezaLogo">
+                                        <tr>
+                                            <td class="Logo">
+                                                <asp:Image ID="imgLogoCompania" runat="server" ImageUrl="~/Estilos/Estilo1/Imagenes/Logoen.png"
+                                                    Height="59" />
+                                            </td>
+                                            <td class="pie" valign="top">
+                                                <!-- ESPACIO DE CABEZA -->
+                                                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+                                                    width="820" height="59px">
+                                                    <param name="movie" value="../../Estilos/Estilo1/swf/banner.swf" />
+                                                    <param name="quality" value="high" />
+                                                    <param name="Src" value="../../Estilos/Estilo1/swf/banner.swf" />
+                                                </object>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td valign="bottom" align="left">
+                                                <!-- NAVEGADOR -->
+                                                <table cellpadding="0" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td>
+                                                            <asp:Label ID="lblLogoCompania" runat="server" Visible="False" Font-Size="Smaller"></asp:Label>
+                                                        </td>
+                                                        <td valign="middle">
+                                                            <!--NAV -->
+                                                            <table cellpadding="0" cellspacing="0" class="Pestanas">
+                                                                <tr align="center">
+                                                                    <td id="pest1" class="pestana" onclick="javascript:location.href('../PanelControl/Default.aspx');">
+                                                                        <asp:Label ID="lblPestPanelControl" runat="server" Text="Panel de Control"></asp:Label></td>
+                                                                    <td id="pest2" class="pestana" onclick="javascript:location.href('../Comerciales/Default.aspx');">
+                                                                        <asp:Label ID="lblPestComercial" runat="server" Text="Comerciales"></asp:Label></td>
+                                                                    <td id="pest3" class="pestana" onclick="javascript:location.href('../ReportesEstacion/Default.aspx');">
+                                                                        <asp:Label ID="lblPestReportes" runat="server" Text="Reportes"></asp:Label></td>
+                                                                    <td id="pest4" class="pestana" onclick="javascript:location.href('../Procesos/Default.aspx');">
+                                                                        <asp:Label ID="lblPestProcesos" runat="server" Text="Procesos"></asp:Label></td>
+                                                                    <td id="pest5" class="pestana" onclick="javascript:location.href('../Variaciones/Default.aspx');">
+                                                                        <asp:Label ID="lblPestVariaciones" runat="server" Text="Variaciones"></asp:Label></td>
+                                                                    <td id="pest7" class="pestana" onclick="javascript:location.href('../Prepagos/Default.aspx');">
+                                                                        <asp:Label ID="lblPrepagos" runat="server" Text="Prepagos"></asp:Label></td>
+                                                                    <td id="pest6" class="pestana" onclick="javascript:location.href('../Consultas/Default.aspx');">
+                                                                        <asp:Label ID="lblPestConsultas" runat="server" Text="Consultas"></asp:Label></td>
+                                                                </tr>
+                                                            </table>
+                                                            <!--NAV -->
+                                                        </td>
+                                                        <td valign="top" align="center">
+                                                            <!-- LINKS -->
+                                                            <table cellpadding="4" cellspacing="1" class="ContenedorLinks">
+                                                                <tr>
+                                                                    <td>
+                                                                        <a href="" class="Link1"></a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="" class="Link1"></a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="" class="Link1">
+                                                                            <asp:Label ID="lblUsuario" runat="server"></asp:Label>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- LINKS -->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- NAVEGADOR -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- ESPACIO DE CABEZA -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="Contenido">
+                                    <!--CONTENIDO DE PAGINA-->
+                                    <table cellpadding="0" cellspacing="0" class="Contenido">
+                                        <tr>
+                                            <td class="ContenidoPagina" valign="top">
+                                                <!-- * -->
+                                                <table cellpadding="0" cellspacing="0" class="ContenidoPaginaPanel">
+                                                    <tr class="PanelInformacion">
+                                                        <td>
+                                                            <!-- Panel de Informacion -->
+                                                            <table cellpadding="0" cellspacing="0" class="PanelTituloPagina">
+                                                                <tr>
+                                                                    <td class="Icono" rowspan="2">
+                                                                        <!-- Imagen 48 * 48 -->
+                                                                        <asp:Image ID="ImgImagenPagina" ImageUrl="~/BlueSkin/Icons/OK-32.gif" runat="server" />
+                                                                        <!-- Imagen 48 * 48 -->
+                                                                    </td>
+                                                                    <td class="Titulo">
+                                                                        <!-- Titulo de Página -->
+                                                                        <asp:Label ID="LblMensajePagina" runat="server" Text="Sistema de Automatización de Islas" ForeColor="White"></asp:Label>
+                                                                        <!-- Titulo de Página -->
+                                                                    </td>
+                                                                    <td class="Volver" rowspan="2">
+                                                                        <!-- Volver -->
+                                                                        <!-- Volver -->
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="Detalle">
+                                                                        <!-- Detalle -->
+                                                                        <asp:Label ID="LblDescripcionPagina" runat="server" Text=""></asp:Label>
+                                                                        <!-- Detalle -->
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- Panel de Informacion -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="Separador">
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="Pagina">
+                                                        <td>
+                                                            <!-- PÁGINA -->
+                                                            <asp:ContentPlaceHolder ID="ContenidoMaestro1" runat="server">
+                                                            </asp:ContentPlaceHolder>
+                                                            <!-- PÁGINA -->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- * -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--CONTENIDO DE PAGINA-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="Pie" style="height: 4%">
+                                    <!-- CONTENIDO DE PIE -->
+                                    <table cellpadding="1" cellspacing="1" width="100%" class="ContenedorPie">
+                                        <tr>
+                                            <td width="15%" style="height: 51px">
+                                                <!-- LOGO -->
+                                                <asp:ImageButton ID="ImgServipunto" runat="server" ImageUrl="~/BlueSkin/Images/2011/Logo-Servipunto.png"
+                                                    OnClick="ImgServipunto_Click" /><!-- LOGO --></td>
+                                            <td width="85%" style="height: 51px" align="center">
+                                                <!-- CONTENDEOR PIE -->
+                                                <table cellpadding="0" cellspacing="0" style="height: 32px">
+                                                    <tr>
+                                                        <td style="height: 18px">
+                                                            <asp:Label ID="lblVersion" runat="server" Text="Versión" ForeColor="White"></asp:Label>
+                                                            <asp:Label ID="lblNumVersion" runat="server" Text="0.0.04" ForeColor="White"></asp:Label>
+                                                            <asp:Label ID="lblAVisoLegal" runat="server" Text="[Aviso Legal] [Privacidad]" ForeColor="White"></asp:Label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 5px">
+                                                                <asp:Label ID="labelCopyRight" runat="server" ForeColor="White">
+                                                                    Copyright 2010
+                                                                </asp:Label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 2px">
+                                                                <asp:HyperLink ID="hipServipunto" runat="server" NavigateUrl="http://www.servipunto.com" ForeColor="White">Servipunto de Software</asp:HyperLink>
+                                                                <a class="Link2" href="http://www.servipunto.com/" id="lnkServipunto"></a>&nbsp;&nbsp;<asp:Label
+                                                                    ID="lblDerechos" runat="server" Height="13px" Text="Todos los Derechos Reservados." ForeColor="White"></asp:Label>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- CONTENDEOR PIE -->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <uc1:Mensaje ID="Mensaje1" runat="server" />
+    </form>
+</body>
+</html>

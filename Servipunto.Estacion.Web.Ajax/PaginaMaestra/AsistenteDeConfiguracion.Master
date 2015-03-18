@@ -1,0 +1,196 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Codebehind="AsistenteDeConfiguracion.master.cs"
+    Inherits="Servipunto.Zencillo.Colombia.PaginaMaestra.AsistenteDeConfiguracion" %>
+<%@ Register Src="../ControlesdeUsuario/Mensaje.ascx" TagName="Mensaje" TagPrefix="uc1" %>
+<%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+    Namespace="System.Web.UI" TagPrefix="asp" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Página sin título</title>
+    <link href="../Estilos/Estilo1/Estilo1.css" rel="stylesheet" type="text/css" />
+    <link href="../Estilos/Tab/css1.css" rel="stylesheet" type="text/css" />
+
+    <script language="javascript" type="text/javascript">
+    function PestanaActiva(objeto)
+    {
+        document.getElementById(objeto).className='pestana_activa';
+    }
+    </script>
+
+    <link href="../Estilos/Estilo1/Estilo1.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            &nbsp;<asp:ScriptManager ID="ScriptManager2" runat="server">
+            </asp:ScriptManager>
+            <table cellpadding="0" cellspacing="0" class="ContenedorPrincipal">
+                <tr>
+                    <td align="center" valign="top" class="Contenido">
+                        <table cellpadding="0" cellspacing="0" class="ContenedorSecundario">
+                            <tr>
+                                <td class="Cabeza">
+                                    <!-- ESPACIO DE CABEZA -->
+                                    <table cellpadding="0" cellspacing="0" class="CabezaLogo">
+                                        <tr>
+                                            <td class="Logo">
+                                                <asp:Image ID="imgLogoCompania" runat="server" ImageUrl="~/Estilos/Estilo1/Imagenes/Logo.png"
+                                                    Height="59" />
+                                            </td>
+                                            <td class="Links" colspan="2" valign="top">
+                                                <!-- ESPACIO DE CABEZA -->
+                                                <asp:Panel ID="pnlLogoLite" runat="server" Visible="false">
+                                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/BlueSkin/Banner/bannerlitezencillofactura.jpg" />
+                                                </asp:Panel>
+                                                <asp:Panel ID="pnlLogoFull" runat="server" Visible="false">
+                                                    <asp:Image ID="Image2" runat="server" ImageUrl="~/BlueSkin/Banner/bannerfullzencillofactura.jpg" />
+                                                </asp:Panel>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td valign="bottom" align="left">
+                                                <!-- NAVEGADOR -->
+                                                <table cellpadding="0" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td>
+                                                            <asp:Label ID="lblLogoCompania" runat="server" Visible="False" Font-Size="Smaller"></asp:Label>
+                                                        </td>
+                                                        <td valign="middle">
+                                                            <!--NAV -->
+                                                            <table cellpadding="0" cellspacing="0" class="Pestanas">
+                                                                <tr align="center">
+                                                                    <td id="pest1" class="pestana">
+                                                                        Detalle Suscripción</td>
+                                                                    <td id="pest2" class="pestana">
+                                                                        Creación de Compañía</td>
+                                                                    <td id="pest3" class="pestana">
+                                                                        Cultura</td>
+                                                                    <td id="pest4" class="pestana">
+                                                                        Facturación</td>
+                                                                    <td id="pest5" class="pestana">
+                                                                        Formatos</td>
+                                                                    <td id="pest6" class="pestana">
+                                                                        Fin Configuración</td>
+                                                                </tr>
+                                                            </table>
+                                                            <!--NAV -->
+                                                        </td>
+                                                        <td valign="top" align="center">
+                                                            <!-- LINKS -->
+                                                            <!-- LINKS -->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- NAVEGADOR -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- ESPACIO DE CABEZA -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="Contenido">
+                                    <!--CONTENIDO DE PAGINA-->
+                                    <table cellpadding="0" cellspacing="0" class="Contenido">
+                                        <tr>
+                                            <td class="ContenidoPagina" valign="top" align="center">
+                                                <!-- * -->
+                                                <table cellpadding="0" cellspacing="0" class="ContenidoPaginaPanel">
+                                                    <tr class="PanelInformacion">
+                                                        <td>
+                                                            <!-- Panel de Informacion -->
+                                                            <table cellpadding="0" cellspacing="0" class="PanelTituloPagina">
+                                                                <tr>
+                                                                    <asp:Panel ID="pnlTitulos" runat="server" HorizontalAlign="Center">
+                                                                        <td align="right" style="width:35%" >
+                                                                            <!-- Imagen 48 * 48 -->
+                                                                            <asp:Image ID="ImgImagenPagina" ImageUrl="~/Themes/Imagenes/orden_com_cliente-48.png"
+                                                                                runat="server" />
+                                                                            <!-- Imagen 48 * 48 -->
+                                                                        </td>
+                                                                        <td style="width:5%"></td>
+                                                                        <td class="Titulo" style="text-align:left">
+                                                                            <!-- Titulo de Página -->
+                                                                            <asp:Label ID="LblMensajePagina" runat="server" Text="Programa de Reconversión Vehicular Bolivia Tarija"></asp:Label>
+                                                                            <!-- Titulo de Página -->
+                                                                        </td>
+                                                                        <td class="Detalle">
+                                                                            <!-- Detalle -->
+                                                                            <asp:Label ID="LblDescripcionPagina" runat="server" Text=""></asp:Label>
+                                                                            <!-- Detalle -->
+                                                                        </td>
+                                                                    </asp:Panel>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- Panel de Informacion -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="Separador">
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="Pagina">
+                                                        <td align="center">
+                                                            <!-- PÁGINA -->
+                                                            <asp:ContentPlaceHolder ID="ContenidoMaestro1" runat="server">
+                                                            </asp:ContentPlaceHolder>
+                                                            <!-- PÁGINA -->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- * -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--CONTENIDO DE PAGINA-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="Pie">
+                                    <!-- CONTENIDO DE PIE -->
+                                    <table cellpadding="1" cellspacing="1" width="100%">
+                                        <tr>
+                                            <td width="15%">
+                                                <!-- LOGO -->
+                                                <asp:ImageButton ID="ImgServipunto" runat="server" ImageUrl="~/BlueSkin/Images/logosimbolo-servipunto-alto-contraste-invertido.png"
+                                                    OnClick="ImgServipunto_Click" /><!-- LOGO --></td>
+                                            <td width="85%">
+                                                <!-- CONTENDEOR PIE -->
+                                                <table cellpadding="0" cellspacing="0" class="ContenedorPie">
+                                                    <tr>
+                                                        <td>
+                                                            Versión 0.0.04 [Aviso Legal] [Privacidad]</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p>
+                                                                Copyright 2011
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p>
+                                                                <a class="Link2" href="http://www.servipunto.com/">Servipunto de Software</a>&nbsp;&nbsp;Todos
+                                                                los Derechos Reservados.</p>
+                                                        </td>
+                                                    </tr>
+                                        </tr>
+                                    </table>
+                                    <!-- CONTENDEOR PIE -->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- CONTENIDO DE PIE -->
+                    </td>
+                </tr>
+            </table>
+            <uc1:Mensaje ID="Mensaje1" runat="server" />
+        </div>
+        </TD></TR></TABLE></DIV>
+    </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servipunto.Estacion.Web.Ajax", "Servipunto.Estacion.Web.Ajax\Servipunto.Estacion.Web.Ajax.csproj", "{68FF4C97-8DB1-430D-BEA1-A673AAA13B97}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Zencillo Administrativo 7.0.00", "Zencillo Administrativo 6.0.00\Zencillo Administrativo 6.0.00.vdproj", "{38C6CE2C-05A1-40A9-9474-80E32E6CBB64}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servipunto.Estacion.Libreria", "..\SevipuntoEstacionLibreriaCompartida\Servipunto.Estacion.Libreria\Servipunto.Estacion.Libreria.csproj", "{C05B683A-769A-46FB-92B2-2107147D2937}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68FF4C97-8DB1-430D-BEA1-A673AAA13B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68FF4C97-8DB1-430D-BEA1-A673AAA13B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68FF4C97-8DB1-430D-BEA1-A673AAA13B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68FF4C97-8DB1-430D-BEA1-A673AAA13B97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C6CE2C-05A1-40A9-9474-80E32E6CBB64}.Debug|Any CPU.ActiveCfg = Debug
+		{38C6CE2C-05A1-40A9-9474-80E32E6CBB64}.Release|Any CPU.ActiveCfg = Release
+		{C05B683A-769A-46FB-92B2-2107147D2937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C05B683A-769A-46FB-92B2-2107147D2937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C05B683A-769A-46FB-92B2-2107147D2937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C05B683A-769A-46FB-92B2-2107147D2937}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

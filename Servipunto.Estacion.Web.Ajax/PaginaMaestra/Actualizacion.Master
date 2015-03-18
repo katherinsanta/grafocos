@@ -1,0 +1,305 @@
+<%@ Master Language="C#" AutoEventWireup="true" Codebehind="Actualizacion.Master.cs"
+    Inherits="Servipunto.Estacion.Web.Ajax.PaginaMaestra.Prueba" %>
+<%@ Register Src="~/ControlesdelUsuario/header.ascx" TagName="Header" TagPrefix="cu1" %>
+<%@ Register Src="~/ControlesdelUsuario/NavigationPanel.ascx" TagName="NavigationPanel1"
+    TagPrefix="cu2" %>
+<%@ Register Src="~/ControlesdelUsuario/Footer.ascx" TagName="Footer" TagPrefix="cu3" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Página sin título</title>
+    <link href="../Estilos/Estilo1.css" rel="stylesheet" type="text/css" />
+    <link href="../BlueSkin/NS.css" rel="stylesheet" type="text/css" />
+    
+    
+    
+    <%--
+    <script type="text/javascript">
+        function VentanaEmergente()
+    {
+        if(document.getElementById("txtIdentificacion").disabled == true)
+            return;
+        var resultado = window.showModalDialog('../Busqueda/BuscadorDinamico.aspx?TipoDeBusqueda=ClienteParaVale','SelectValueWindow');              
+        if(resultado != null)
+        {
+            var arreglo = resultado.split('©');
+            document.getElementById("txtIdentificacion").value = arreglo[0];
+            document.getElementById("txtNombreRazonSocial").value = arreglo[1];
+            //document.getElementById("lblFormTitle").Text = arreglo[1];                        
+        }
+    }  
+    </script>
+    <script type="text/javascript">
+ /******/
+    var caracter = window.Event ? true : false;
+    
+    function ValidarNumero(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key <= 13 || (key>= 48 && key <= 57) );
+    }
+
+    function ValidarNumeroDecimal(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key <= 13 || (key>= 48 && key <= 57) || key == 46);
+    }
+
+    function ValidarAlfanumerico(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key <= 13 || key == 95 (key>= 48 && key <= 57) || (key >= 65  && key <= 90) || (key >= 97  && key <= 122));
+    }
+      
+
+    function Calcular(evento, caso)
+    {    
+        var key = caracter ? evento.which : evento.keyCode;
+        if(key == 9)
+            return            
+        var total = parseFloat(window.document.getElementById('txtTotal').getAttribute("value"));
+        var cantidad  =  parseFloat(window.document.getElementById('txtCantidad').getAttribute("value"));
+        //var precio = parseFloat(window.document.getElementById('lblPrecio').innerText);
+        var precio = parseFloat(window.document.getElementById('txtPrecio').getAttribute("value"));
+        var resultado;
+        switch(caso)
+        {
+            case "Total":
+                resultado =  cantidad * precio;
+                if(isNaN(resultado))
+                    window.document.MyForm.txtTotal.value = 0
+                else 
+                    window.document.MyForm.txtTotal.value = resultado
+                break;                            
+            case "Cantidad":
+                resultado = total / precio;
+                if(isNaN(resultado))
+                    window.document.MyForm.txtCantidad.value = 0
+                else 
+                    window.document.MyForm.txtCantidad.value = resultado
+                    
+                if(window.document.getElementById('txtCantidad').getAttribute("value") == "Infinity")
+                    window.document.MyForm.txtCantidad.value = 0;
+                break;            
+        }       
+        /*
+        alert(total)
+        alert(cantidad)
+        alert(precio)
+        alert(resultado)
+        */
+        
+    }
+    
+    function moveVerticalScroll()
+    {
+        document.body.scrollTop=0;
+        //window.onload=moveVerticalScroll;
+    }
+
+
+
+    
+    function VentanaEmergente(caso)
+    {
+        switch(caso)
+        {
+            case "Tiquete":
+                var resultado = window.showModalDialog('../Busqueda/BuscadorDinamico.aspx?TipoDeBusqueda=TiqueteActivoAsignado','SelectValueWindow');              
+                if(resultado != null)
+                {
+                    var arreglo = resultado.split('©');
+                    document.getElementById("txtNumeroTiquete").value = arreglo[0];
+                    __doPostBack('btnConsultarTiquete', '' );
+                }
+                break;            
+            case "Articulo":
+                var resultado = window.showModalDialog('../Busqueda/BuscadorDinamico.aspx?TipoDeBusqueda=Articulo','SelectValueWindow');              
+                if(resultado != null)
+                {
+                    var arreglo = resultado.split('©');
+                    document.getElementById("txtCodigoArticulo").value = arreglo[0];
+                    document.getElementById("lblDescripcionArticulo").value = arreglo[1];
+                    document.getElementById("lblPresentacion").value = arreglo[2];
+                    __doPostBack('btnConsultarArticulo', '' );
+                }                
+                break;           
+            
+                 
+             case "Cliente":
+                var resultado = window.showModalDialog('../Busqueda/BuscadorDinamico.aspx?TipoDeBusqueda=Cliente','SelectValueWindow');
+                if(resultado != null)
+                {
+                    var arreglo = resultado.split('©');
+                    document.getElementById("txtIdentificacion").value = arreglo[0];
+                    document.getElementById("lblNombreCliente").value = arreglo[1];
+                    __doPostBack('btnConsultarCliente', '' );
+                }                                
+                break;
+        }       
+    }  
+    /*********/
+    function PestanaActiva(objeto,objeto_izq)
+    {
+        document.getElementById(objeto).className='pestana_activa';
+        document.getElementById(objeto_izq).className='PanelMenuCabeza_Activa';
+    }
+    function PaginaAnterior(objeto,objeto_izq)
+    {
+        document.getElementById(objeto).getAttribute='pestana_activa';
+        document.getElementById(objeto_izq).className='PanelMenuCabeza_Activa';
+    }
+        var caracter = window.Event ? true : false;
+    function ValidarNumero(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key <= 13 || (key>= 48 && key <= 57));
+    }
+   
+    function Calcular(evento, caso)
+    {        
+        var key = caracter ? evento.which : evento.keyCode;
+        if(key == 9)
+            return            
+
+        var numeroInicial = parseInt(window.document.getElementById('txtNumeroInicial').getAttribute("value"));
+        var catidad  =  parseInt(window.document.getElementById('txtCantidad').getAttribute("value"));        
+        var numeroFinal  =  parseInt(window.document.getElementById('txtNumeroFinal').getAttribute("value"));        
+        var resultado;
+        if(caso == "1")
+        {
+            resultado = numeroInicial + catidad - 1;    
+            if(isNaN(resultado))
+                window.document.MyForm.txtNumeroFinal.value = 0;                
+            else
+                window.document.MyForm.txtNumeroFinal.value = resultado;
+                
+        }
+        else
+        {
+            resultado = numeroFinal - numeroInicial + 1; 
+            if(isNaN(resultado))
+                window.document.MyForm.txtCantidad.value = 0;
+            else
+                window.document.MyForm.txtCantidad.value = resultado;
+        }
+    }
+
+
+    /*******/
+    function NoEdicion(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key > 300);
+    }   
+
+    
+		    function formularioEmergente()
+		    {
+		        window.showModalDialog('ArticulosPorListaDePrecio.aspx',window,'dialogWidth:600px;dialogHeight:200px;resizable:no;center:yes');
+            }
+            var nav4 = window.Event ? true : false;
+            function acceptNum(evt)
+                {   
+                    var key = nav4 ? evt.which : evt.keyCode;   
+                    return (key <= 13 || (key>= 48 && key <= 57));
+                }
+
+    
+
+    
+    var caracter = window.Event ? true : false;
+    function ValidarNumero(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key <= 13 || (key>= 48 && key <= 57));
+    }
+    
+    function ValidarNumeroDecimal(evento)
+    {   
+        var key = caracter ? evento.which : evento.keyCode;           
+        return (key <= 13 || (key>= 48 && key <= 57) || key == 44  || key == 46);
+    }
+    
+        function setMaxLength() {    
+        var x = document.getElementsByTagName('textarea');    
+        var counter = document.createElement('div');    
+        counter.className = 'counter';    
+        for (var i=0;i<x.length;i++) {        
+            if (x[i].getAttribute('maxlength')) {            
+                var counterClone = counter.cloneNode(true);            
+                counterClone.relatedElement = x[i];            
+                counterClone.innerHTML = '<span>0</span>/'+x[i].getAttribute('maxlength');            
+                x[i].parentNode.insertBefore(counterClone,x[i].nextSibling);            
+                x[i].relatedElement = counterClone.getElementsByTagName('span')[0];            
+                x[i].onkeyup = x[i].onchange = checkMaxLength;            
+                x[i].onkeyup();        
+                }    
+            }
+        }
+    
+    function checkMaxLength() {    
+        var maxLength = this.getAttribute('maxlength');    
+        var currentLength = this.value.length;    
+        if (currentLength > maxLength)        
+            this.relatedElement.className = 'toomuch';    
+        else        
+            this.relatedElement.className = '';    
+        this.relatedElement.firstChild.nodeValue = currentLength;    // not innerHTML
+        }
+        function ValidarCaracteres(textareaControl,maxlength){                     
+            if (textareaControl.value.length > maxlength){            
+            textareaControl.value = textareaControl.value.substring(0,maxlength);            
+            alert("Debe ingresar hasta un maximo de "+maxlength+" caracteres");        
+            }    
+        }
+    </script>--%>
+</head>
+<body>
+    <form id="form1" runat="server" style="width: 100%; height: 100%; background-color: #E8E8E8">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <div style="width: 100%; height: 20%;">
+            <cu1:Header ID="Header1" runat="server"></cu1:Header>
+        </div>
+        <table id="div" cellpadding="0" cellspacing="0" border="0px" class="form" style="margin-top: 4px;
+            clear: both; width: 100%; height: 10%; margin-bottom: 4px;">
+            <tr>
+                <td class="formNavigation" valign="top" style="margin-bottom: 4px; border-top: solid 1px #000000;
+                    border-bottom: solid 1px #000000;">
+                    <div id="divNavigation" style="background-color: #CCCCCC; font-size: 14px; font-family: tahoma,geneva,sans-serif;
+                        color: Black;" runat="server">
+                        <cu2:NavigationPanel1 ID="NP1" runat="server" />
+                    </div>
+                </td>
+                <td class="formmaster" style="background-color: #ffffff;">
+                    <div class="divH" style="width: 100%; height: 62px; background-color: #999999;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img style="margin-left: 8px; margin-top: 8px" src="../../BlueSkin/Icons/2011/Logo.png">
+                                </td>
+                                <td style="padding-left: 5px; padding-bottom: 5px; padding-right: 5px; padding-top: 15px;
+                                    color: #FFF; font-size: 14px; font-family: Tahoma, Geneva, sans-serif;">
+                                    Servipunto Administrativo Automatizacion De Islas
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="divContenido" class="formmaster" style="margin-right: 4px; border-left: solid 1px #000000;
+                        border-right: solid 1px #000000; border-bottom: solid 1px #000000; width: 100%;
+                        height: 100%; background-color: White;" runat="server">
+                        <asp:ContentPlaceHolder ID="ContenidoMaestro1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div style="clear: both; border: 0px; height: 55px; border: solido 1px black; background-color: #666666;
+            margin-bottom: 0px;">
+            <cu3:Footer ID="Footer1" runat="server" />
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3.1" PrintWidth="15240" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0">
+  <StyleSheet>
+    <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; " />
+    <Style Name="Heading1" Value="font-size: 16pt; font-weight: bold; " />
+    <Style Name="Heading2" Value="font-family: Times New Roman; font-size: 14pt; font-weight: bold; font-style: italic; " />
+    <Style Name="Heading3" Value="font-size: 13pt; font-weight: bold; " />
+  </StyleSheet>
+  <Sections>
+    <Section Type="GroupHeader" Name="groupHeader1" Height="675" BackColor="16777215">
+      <Control Type="AR.Label" Name="label1" Left="270" Top="0" Width="3420" Height="270" Caption="VENTAS CANASTILLA" Style="ddo-char-set: 0; font-weight: bold; font-size: 12pt; " />
+      <Control Type="AR.Label" Name="label10" Left="1800" Top="360" Width="1440" Height="285.0001" Caption="NOMBRE" />
+      <Control Type="AR.Label" Name="label12" Left="5940" Top="360" Width="1260" Height="270" Caption="PRECIO" Style="ddo-char-set: 0; font-weight: bold; font-style: normal; font-size: 8.25pt; font-family: Microsoft Sans Serif; " />
+      <Control Type="AR.Label" Name="label14" Left="7920" Top="360" Width="1440" Height="285.0001" Caption="SUBTOTAL" Style="ddo-char-set: 0; font-weight: bold; font-style: normal; font-size: 8.25pt; font-family: Microsoft Sans Serif; " />
+      <Control Type="AR.Label" Name="label15" Left="9450" Top="360" Width="1440" Height="285.0001" Caption="VALOR IVA" Style="ddo-char-set: 0; font-weight: bold; font-style: normal; font-size: 8.25pt; font-family: Microsoft Sans Serif; " />
+      <Control Type="AR.Label" Name="label16" Left="10980" Top="360" Width="1440" Height="285.0001" Caption="TOTAL" Style="ddo-char-set: 0; font-weight: bold; font-style: normal; font-size: 8.25pt; font-family: Microsoft Sans Serif; " />
+      <Control Type="AR.Label" Name="label17" Left="4860" Top="360" Width="990" Height="270" Caption="CANTIDAD" Style="ddo-char-set: 0; font-weight: bold; font-style: normal; font-size: 8.25pt; font-family: Microsoft Sans Serif; " />
+      <Control Type="AR.Label" Name="label21" Left="7290" Top="360" Width="540" Height="270" Caption=" IVA" Style="ddo-char-set: 0; font-weight: bold; font-style: normal; font-size: 8.25pt; font-family: Microsoft Sans Serif; " />
+      <Control Type="AR.Label" Name="label3" Left="270" Top="360" Width="1350" Height="270" Caption="CONSECUTIVO" Style="ddo-char-set: 0; font-weight: bold; font-style: normal; font-size: 8.25pt; font-family: Microsoft Sans Serif; " />
+    </Section>
+    <Section Type="Detail" Name="detail" Height="375" BackColor="16777215">
+      <Control Type="AR.Label" Name="label2" DataField="descripcion" Left="1890" Top="0" Width="2880" Height="270" Caption="NOMBRE" />
+      <Control Type="AR.Field" Name="textBox7" DataField="Cantidad" Left="4860" Top="0" Width="990" Height="270" Text="Cantidad" Style="text-align: right; " />
+      <Control Type="AR.Field" Name="textBox8" DataField="Precio_uni" Left="5940" Top="0" Width="1260" Height="270" Text="precio" OutputFormat="$#,##0.00" Style="text-align: right; " />
+      <Control Type="AR.Field" Name="textBox9" DataField="Iva" Left="7290" Top="0" Width="540" Height="270" Text="Iva" OutputFormat="" Style="text-align: right; " />
+      <Control Type="AR.Field" Name="textBox10" DataField="Subtotal" Left="7920" Top="0" Width="1440" Height="270" Text="Subtotal" OutputFormat="$#,##0.00" Style="text-align: right; " />
+      <Control Type="AR.Field" Name="textBox11" DataField="vr_iva" Left="9450" Top="0" Width="1440" Height="270" Text="Totaliva" OutputFormat="$#,##0.00" Style="text-align: right; " />
+      <Control Type="AR.Field" Name="textBox12" DataField="Total" Left="10980" Top="0" Width="1440" Height="270" Text="Total" OutputFormat="$#,##0.00" Style="text-align: right; " />
+      <Control Type="AR.Field" Name="textBox5" DataField="Consecutivo" Left="270" Top="0" Width="1350" Height="270" Text="Consecutivo" Style="text-align: right; " />
+    </Section>
+    <Section Type="GroupFooter" Name="groupFooter1" Height="434" BackColor="16777215">
+      <Control Type="AR.Label" Name="label4" Left="270" Top="0" Width="3600" Height="270" Caption="TOTAL VENTAS CANASTILLA" Style="ddo-char-set: 0; font-weight: bold; font-size: 12pt; " />
+      <Control Type="AR.Field" Name="textBox3" DataField="CANTIDAD" Left="4410" Top="0" Width="1440" Height="270" Text="CANTIDAD" OutputFormat="" Style="ddo-char-set: 0; text-align: right; font-weight: bold; font-size: 11.25pt; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBox13" DataField="IVA" Left="7110" Top="0" Width="720" Height="270" Text="IVA" OutputFormat="" Style="ddo-char-set: 0; text-align: right; font-weight: bold; font-size: 11.25pt; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBox14" DataField="SUBTOTAL" Left="7920" Top="0" Width="1440" Height="270" Text="SUBTOTAL" OutputFormat="$#,##0.00" Style="ddo-char-set: 0; text-align: right; font-weight: bold; font-size: 11.25pt; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBox15" DataField="vr_iva" Left="9450" Top="0" Width="1440" Height="270" Text="SUBTOTAL" OutputFormat="$#,##0.00" Style="ddo-char-set: 0; text-align: right; font-weight: bold; font-size: 11.25pt; " SummaryType="1" SummaryRunning="2" />
+      <Control Type="AR.Field" Name="textBox16" DataField="Total" Left="10980" Top="0" Width="1440" Height="270" Text="Valor total de venta" OutputFormat="$#,##0.00" Style="ddo-char-set: 0; text-align: right; font-weight: bold; font-size: 11.25pt; " SummaryType="1" SummaryRunning="2" />
+    </Section>
+  </Sections>
+  <ReportComponentTray />
+  <PageSettings />
+  <Parameters />
+</ActiveReportsLayout>
