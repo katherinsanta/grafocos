@@ -7,3 +7,6 @@ C:\Users\Venancio.Prada\grafocos\ejemplo git\ejemplo git\obj\Debug\WindowsFormsA
 C:\Users\Venancio.Prada\grafocos\ejemplo git\ejemplo git\obj\Debug\ejemplo git.csproj.GenerateResource.Cache
 C:\Users\Venancio.Prada\grafocos\ejemplo git\ejemplo git\obj\Debug\ejemplo git.exe
 C:\Users\Venancio.Prada\grafocos\ejemplo git\ejemplo git\obj\Debug\ejemplo git.pdb
+C:\Users\Venancio.Prada\Documents\GitHub\pruebagitcorp2gext\ejemplo git\ejemplo git\bin\Debug\ejemplo git.exe.config
+C:\Users\Venancio.Prada\Documents\GitHub\pruebagitcorp2gext\ejemplo git\ejemplo git\obj\Debug\ejemplo git.exe
+C:\Users\Venancio.Prada\Documents\GitHub\pruebagitcorp2gext\ejemplo git\ejemplo git\obj\Debug\ejemplo git.pdb
