@@ -94,10 +94,12 @@
                     <asp:Label ID="Label9" runat="server" Text="Sexo"></asp:Label>
                 </td>
                 <td>
-                    <asp:RadioButton ID="RadioButton1" runat="server" />
-                    <asp:RadioButton ID="RadioButton2" runat="server" />
+                    <asp:RadioButton ID="RadioButton1" text="HOMBRE" value="H" runat="server" />
+                    <asp:RadioButton ID="RadioButton2" TEXT="MUJER" value="M"  runat="server" />
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Label ID="lblprueba" runat="server" ></asp:Label>
+                </td>
             </tr>
             <tr>
                 <td>

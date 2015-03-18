@@ -1,0 +1,5 @@
+C:\Users\Venancio.Prada\Documents\GitHub\pruebagitcorp2gext\pruebas_ing_ingreso\pruebas_ing_ingreso\bin\pruebas_ing_ingreso.dll
+C:\Users\Venancio.Prada\Documents\GitHub\pruebagitcorp2gext\pruebas_ing_ingreso\pruebas_ing_ingreso\bin\pruebas_ing_ingreso.pdb
+C:\Users\Venancio.Prada\Documents\GitHub\pruebagitcorp2gext\pruebas_ing_ingreso\pruebas_ing_ingreso\obj\Debug\pruebas_ing_ingreso.csprojResolveAssemblyReference.cache
+C:\Users\Venancio.Prada\Documents\GitHub\pruebagitcorp2gext\pruebas_ing_ingreso\pruebas_ing_ingreso\obj\Debug\pruebas_ing_ingreso.dll
+C:\Users\Venancio.Prada\Documents\GitHub\pruebagitcorp2gext\pruebas_ing_ingreso\pruebas_ing_ingreso\obj\Debug\pruebas_ing_ingreso.pdb

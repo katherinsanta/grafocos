@@ -11,7 +11,15 @@ namespace pruebas_ing_ingreso
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (RadioButton1.Checked)
+            {
+                
+                    //RadioButton1.Text;
+            }
+            else
+            {
+                lblprueba.Text = RadioButton2.Text;
+            }
         }
     }
 }
