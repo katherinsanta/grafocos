@@ -4,11 +4,11 @@
     
     <tr>
          <td class="baner" style="width:20%;height:61px;" >
-             <%--<asp:Image ID="imagenbanner" BorderStyle="None" runat="server" ImageUrl="~/imagenes/banner.png" />--%>
+             <asp:Image ID="imagenbanner1" BorderStyle="None" runat="server" ImageUrl="~/imagenes/banner1.1.png" Height="113px" Width="181px" />
          </td>
         <td class="baner"  style="height: 83px; width: 80%; text-align: right"; >
 
-            <img  id="imagenbanner"src="../imagenes/banner.png" height="93px"style="margin-right:0px" />
+            <img  id="imagenbanner"src="../imagenes/banner.png" style="margin-right:0px; height: 123px;" />
         </td>
     </tr>
 
